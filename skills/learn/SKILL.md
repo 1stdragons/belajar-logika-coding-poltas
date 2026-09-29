@@ -10,6 +10,14 @@ Activate learning mode in the main conversation. Read [behavior.md](behavior.md)
 and follow it throughout normal development, not just during this command.
 Do not switch to a subagent or require manual coding by default.
 
+Use the Read tool for plugin guides instead of printing them with Bash `cat`.
+Use Glob to discover optional learner-state files before reading them. A missing
+`.sensible-vibes/` directory is normal first-time setup, not an error. If a shell
+check is necessary, handle absence with an explicit conditional that succeeds;
+don't run `ls` on a possibly missing directory or hide actual read failures.
+Keep guide reads separate from optional state checks so a missing file doesn't
+make a successful instruction read look like a failed tool call.
+
 ## Locate state
 
 Starting at the current working directory, look upward for `.sensible-vibes/`,

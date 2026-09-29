@@ -21,14 +21,14 @@ Restart Claude Code in the project you want to work on, then run:
 /sensible-vibes:learn
 ```
 
-Answer a few short setup questions, then ask Claude to build something. Starting fresh or joining an unfamiliar repository both work. For an existing repository, Claude first inspects the code and sketches a small system map.
+Setup asks one question at a time. Use the arrow keys and Enter for choices; pick **Use defaults** to skip preference setup. Then ask Claude to build something. Starting fresh or joining an unfamiliar repository both work. For an existing repository, Claude first inspects the code and sketches a small system map.
 
 ## What it feels like
 
 ```text
 You: Add Stripe subscriptions.
 
-Claude: ◆ BUILD CHECKPOINT
+Claude: ✦ BUILD CHECKPOINT - Handling duplicate payment events
 Stripe can deliver the same event more than once.
 How would you prevent it from updating a subscription twice?
 
@@ -36,7 +36,7 @@ You: Save the event ID and check whether we already handled it?
 
 Claude: Yes—that's the idea behind idempotency.
 
-◆ DECISION REVIEW
+✦ DECISION REVIEW - Handling duplicate payment events
 We'll save the event ID and update the subscription in one
 transaction, so concurrent deliveries can't process it twice.
 

@@ -26,14 +26,17 @@ Launch with `claude --plugin-dir /absolute/path/to/sensible-vibes`.
 1. **Fresh project:** Run `/sensible-vibes:learn`. Choose a new project, describe
    a small CLI, and accept preference defaults. Check that all three state files
    are created, the map separates proposed from implemented components, and no
-   understanding is marked demonstrated without evidence.
+   understanding is marked demonstrated without evidence. Choice questions must
+   use native pickers with one question per screen; no questionnaire dump or
+   failed shell check for a missing state directory.
 2. **Existing unfamiliar repository:** Use a separate copy of a real repository.
    Choose the existing-repository flow. Confirm Claude reads actual entry points
    and configuration, gives an accurate short map before familiarity questions,
    asks whole-system versus focused scope, and doesn't invent a frontend/database.
 3. **Checkpoint → implementation:** Ask for a meaningful feature, such as durable
    storage or retrying an external request. Confirm Claude asks one reasoning
-   question before implementing the decision. Give a partial answer; check that
+   question under a title naming the decision, before suggesting its own solution
+   or implementing the decision. Give a partial answer; check that
    it refines the answer and offers Implement / Discuss first. Select Discuss
    first, ask for clarification or propose an alternative, and confirm it stays
    paused and updates the approach if needed. Select Implement;
@@ -46,6 +49,11 @@ Launch with `claude --plugin-dir /absolute/path/to/sensible-vibes`.
 5. **Lifecycle:** Restart, resume, `/clear`, and `/compact`. Confirm preferences,
    the map, and mastered concepts survive without repeated onboarding. Pause
    learning, restart, and confirm it stays paused; invoke Learn to resume.
+6. **Guided foundations:** With a beginner profile and a new project, check that
+   stack, storage, and deployment remain visible open decisions. Ask what an
+   unfamiliar term means while answering a checkpoint. Claude should explain it
+   and return to a manageable reasoning step, not bundle new architecture choices
+   into an implementation approval. Use different projects to avoid overfitting.
 
 Do not commit `.sensible-vibes/` or test transcripts. The plugin recommends an
 ignore rule during onboarding, but changes `.gitignore` only after telling the
@@ -97,7 +105,13 @@ Tested on 2026-09-28 with Claude Code 2.1.240:
   Ask a question; now Discuss first), then wrote
   the CLI after Implement. Its five generated CLI/storage tests passed locally.
 
-The live tests used print mode with file tools, exercising the plain-text choice
-fallback. Native interactive choices and the actual `/compact` command still need
-an interactive smoke test. Checkpoint quality remains model-dependent; these
-examples verify the interaction, not a guarantee for every conversation.
+Those initial live tests used print mode with file tools and covered the plain-text
+choice fallback. For 0.1.1, additional checks on Claude Code 2.1.284 verified the
+native first-question picker and Enter selection in an interactive terminal.
+The following prompt asked only for the project description. A separate beginner
+conversation kept foundational choices open, asked a named checkpoint, and returned
+to that checkpoint after explaining unfamiliar concepts, without implementing.
+
+All 16 hook tests still pass. The actual `/compact` command still needs an
+interactive smoke test. Checkpoint quality remains model-dependent; these examples
+verify observed behavior, not a guarantee for every conversation.

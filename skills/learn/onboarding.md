@@ -1,57 +1,51 @@
-# First-time onboarding
+# Onboarding
 
-Keep this conversational and short. Accept free-form answers, batch related
-preferences, and reuse information the user already supplied. Do not quiz during
-onboarding. The user may accept defaults or skip questions; mark unknowns honestly.
+Guide one step at a time. Reuse answers already given; don't dump a questionnaire.
+For choices, call AskUserQuestion with exactly one question, 2–4 short options,
+brief descriptions, a header of at most 12 characters, and `multiSelect: false`.
+Use its native keyboard picker, not a printed imitation. If unavailable, ask one
+plain-text question. Open-ended answers belong in chat.
 
-Tell the user: “I'll keep your preferences and a small project map in
-`.sensible-vibes/` here. I recommend adding it to `.gitignore` so your learning
-notes stay out of Git.” Do not edit `.gitignore` unless the user wants the edit;
-announce it before making it. Explain that AI writes the code by default, and
-after each checkpoint the user can choose Implement or Discuss first.
+Briefly explain: AI writes the code, the learner reasons through decisions, and
+notes live in .sensible-vibes/. Recommend ignoring that directory in Git. Don't
+change .gitignore unless requested; announce the edit first.
 
-## Project situation
+## Project
 
-Ask: “What are we doing? A. Starting a new project; B. Working in an existing
-repository; C. Continuing a project I already know.”
-Skip this question only if the user has already stated their situation. An empty
-folder alone is not an answer. Ask this first, before the preference batch.
+Unless already answered, first ask “What are we doing?” using a native picker:
+New project / Existing repo / Known project. Don't infer the answer from an empty
+folder. Wait for each answer before the next question.
 
-- **New:** Ask what they are building (unless already known). Establish the
-  intended product; proposed architecture is a proposal, not an existing system.
-- **Existing:** Before asking about architecture familiarity, inspect the repo.
-  Read project guidance, README, directory structure, dependency manifests,
-  entry points, routing, data/schema layer, auth, external integrations, and
-  deployment configuration. Exclude generated/vendor directories and secret
-  values. Follow one representative flow; this is orientation, not an audit.
-  Create the initial map with file-path evidence, unknowns, and major boundaries.
-  Present a concise flow and key external services. Then ask codebase familiarity
-  (basically new / worked in it a little / know it well) and learning scope
-  (entire system / mostly parts we touch / a mix). Never assume a web app stack.
-- **Known:** Ask familiarity with the current architecture. Do a brief inspection
-  to maintain an evidence-based map, avoiding introductory teaching they don't
-  need. Infer or ask desired scope if it isn't clear.
+- **New:** Ask what they're building if unknown. Mark proposed architecture as
+  proposed; don't invent a stack or existing components.
+- **Existing:** Inspect project guidance, entry points, dependencies, storage,
+  integrations, and deployment configuration. Avoid secrets and generated files.
+  Save a small evidence-based map and show a concise flow with unknowns. Then ask
+  codebase familiarity (New / A little experience / Know it well), followed by
+  learning scope (Whole system / Parts we touch / A mix), in separate pickers.
+- **Known:** Ask architecture familiarity if unknown. Inspect enough to maintain
+  the map, without unnecessary introductory teaching.
 
-## Preferences
+## Learner
 
-Ask these in a compact conversational batch, not an eight-turn questionnaire:
+Ask only what's unknown, one question at a time:
 
-- Overall programming experience: Beginner / Some experience / Comfortable /
-  Advanced.
-- Familiarity with this project's stack: New / Some experience / Comfortable /
-  Advanced. Accept distinctions across technologies.
-- Main learning goals: systems end to end / architecture / backend / frontend /
-  debugging / infrastructure and deployment / engineering fundamentals / all.
-- Checkpoint frequency: Light / **Normal** / Frequent.
-- Question style: **Open-ended** / Multiple choice / Mixed.
-- Implementation: **AI writes code** / Mix of AI and me / More hands-on coding.
-- Optional: “What do you hope to become capable of?”
+- Programming experience: Beginner / Some experience / Comfortable / Advanced.
+- Stack familiarity: New / Some experience / Comfortable / Advanced. Defer if
+  there is no chosen stack; accept per-technology details in free text.
+- Goal, in chat: “What would you most like to get better at?”
+- Preferences, a native picker:
+  - Use defaults — Normal checkpoints, open-ended reasoning, AI writes code.
+  - Customize — Adjust frequency, question style, or who writes the code.
 
-Offer “use the defaults” for the bold preferences. Do not silently fill in
-experience or goals. If skipped, record “Not specified” and adapt from evidence.
+Defaults finishes setup immediately. Customize asks frequency (Light / Normal /
+Frequent), reasoning style (Open-ended / Multiple choice / Mixed), and coding
+preference (AI writes / A mix / More hands-on), each in a separate picker. Reasoning
+style doesn't change setup pickers. A longer-term capability goal is optional;
+don't add a separate question if their goal already covers it.
 
-Use state-templates.md to save answers and the map. If setup spans turns, save
-known answers with `Onboarding: incomplete` and a short `Remaining onboarding`
-list so a restart can resume it. Mark complete when the user finishes or chooses
-to proceed with defaults. Never label self-reported experience as demonstrated
-understanding. Summarize the chosen preferences in one sentence and start building.
+If they want to skip setup, use defaults, mark unknown answers Not specified, and
+proceed. Save known answers with state-templates.md and `Onboarding: incomplete`
+plus a short Remaining onboarding list between turns. Mark complete when ready.
+Self-reported experience isn't demonstrated understanding. Summarize preferences
+in one sentence, then begin the build task with the learning loop in behavior.md.
