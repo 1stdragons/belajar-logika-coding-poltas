@@ -34,7 +34,7 @@ You:
 Claude:
   ────────────────────────────────────────────────────────────
 
-  ✦ ✦ ✦ 🧠 BUILD CHECKPOINT - Who can change a shared list ✦ ✦ ✦
+  ✦ 🧠 BUILD CHECKPOINT - Who can change a shared list
 
   Friends need to read the list without being able to change it.
 
@@ -51,7 +51,7 @@ Claude:
 
   ────────────────────────────────────────────────────────────
 
-  ✦ ✦ ✦ 💬 DECISION CHECKPOINT - Who can change a shared list ✦ ✦ ✦
+  ✦ 💬 DECISION CHECKPOINT - Who can change a shared list
 
   Proposed: check ownership on the server before allowing a change. This keeps
   friends' viewing access separate from editing. Edits must pass through the server.

@@ -57,7 +57,7 @@ Don't repeat a recap, diagram, and lesson after every reply.
 
 Callouts use a divider, bold heading, spacing, then a bold question or native
 AskUserQuestion picker (text fallback if unavailable). Reports need no question.
-Headings use `✦ ✦ ✦ <icon> <TYPE> - <description> ✦ ✦ ✦` with exact labels:
+Headings use `✦ <icon> <TYPE> - <description>` with exact labels:
 `🧠 BUILD CHECKPOINT`, `💬 DECISION CHECKPOINT`, `🔎 SYSTEM CHECK`,
 `💡 WHY THIS MATTERS`, `💡 IMPLEMENTATION REPORT`.
 

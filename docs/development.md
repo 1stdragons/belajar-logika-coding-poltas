@@ -76,7 +76,7 @@ Launch with `claude --plugin-dir /absolute/path/to/vibe-wise`.
    diagram shows real components and labeled flows. Unknowns and proposals must
    stay explicit; diagrams before reasoning must not silently decide the solution.
    Build and Decision Checkpoints should start with a divider and bold named title
-   with three `✦` stars on each side and a consistent icon (🧠 Build, 💬 Decision,
+   with one leading `✦` star and a consistent icon (🧠 Build, 💬 Decision,
    🔎 System),
    followed by brief context and a bold question (or native picker), with no
    trailing paragraphs obscuring the point where the learner should respond.
