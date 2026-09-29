@@ -33,7 +33,11 @@ Ask only what's unknown, one question at a time:
 - Programming experience: Beginner / Some experience / Comfortable / Advanced.
 - Stack familiarity: New / Some experience / Comfortable / Advanced. Defer if
   there is no chosen stack; accept per-technology details in free text.
-- Goal, in chat: “What would you most like to get better at?”
+- Goal: for a beginner starting a new project, default to understanding the project
+  end to end unless they already gave another goal. Say “I'll guide you through
+  how this project works end to end as we build it.” Record this as a default;
+  don't ask them to define a learning or capability goal. They can change it later.
+  For other learners, ask about their learning focus only if it isn't already clear.
 - Preferences, a native picker:
   - Use defaults — Normal checkpoints, open-ended reasoning, AI writes code.
   - Customize — Adjust frequency, question style, or who writes the code.
