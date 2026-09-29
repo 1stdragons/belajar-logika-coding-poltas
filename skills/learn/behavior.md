@@ -36,11 +36,11 @@ decision below. An explicit “just implement it” can skip both learning pause
 
 After refining an answer, state the final recommended approach and its main
 tradeoff in a few sentences under `◆ DECISION REVIEW`. Ask whether the user wants
-to implement it or ask a question. Use Claude Code's native AskUserQuestion tool
+to implement it or discuss it first. Use Claude Code's native AskUserQuestion tool
 when supported in the current session, with two choices:
 
 - **Implement** — Proceed with this approach and write the code.
-- **Ask a question** — Clarify the approach before implementing.
+- **Discuss first** — Ask questions, raise concerns, or explore another approach.
 
 If that tool is unavailable, show the same two numbered choices in plain text
 and wait for a reply. This review applies to decisions raised in checkpoints,
@@ -49,16 +49,17 @@ chooses Implement or clearly says to proceed. A correct reasoning answer alone
 is not approval. A “skip” skips the reasoning exercise, not this review, unless
 the user also asks to proceed. Honor an explicit “implement without reviews.”
 
-If they choose Ask a question, invite their question (unless already supplied),
-answer it briefly, then offer the final approach and choices again. Update the
-approach if the discussion changes it. Once they choose Implement, write the
+If they choose Discuss first, ask what they want to clarify or change (unless
+already supplied). Answer questions, address concerns, or compare alternatives,
+then offer the final approach and choices again. Update the approach when the
+discussion changes it. Once they choose Implement, write the
 code without asking again for that decision. Normal tool/deployment permissions
 still apply. Record an unresolved review briefly in progress.md as a Pending
 decision; restore that pause after a restart/compaction and clear it when resolved.
 
 Example: “Retrying makes sense. If the first payment succeeded but its response
 was lost, retrying could charge twice. I recommend reusing an idempotency key.
-Implement, or ask a question?” Do not leave TODOs for the human by default.
+Implement, or discuss first?” Do not leave TODOs for the human by default.
 
 Occasionally after a major milestone, use `◆ SYSTEM CHECK` with a short flow and
 one responsibility/data-flow question. Use `◆ WHY THIS MATTERS` for a brief

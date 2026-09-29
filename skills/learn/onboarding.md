@@ -8,7 +8,7 @@ Tell the user: “I'll keep your preferences and a small project map in
 `.sensible-vibes/` here. I recommend adding it to `.gitignore` so your learning
 notes stay out of Git.” Do not edit `.gitignore` unless the user wants the edit;
 announce it before making it. Explain that AI writes the code by default, and
-after each checkpoint the user can choose Implement or Ask a question.
+after each checkpoint the user can choose Implement or Discuss first.
 
 ## Project situation
 
