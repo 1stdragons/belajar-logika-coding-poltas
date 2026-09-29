@@ -45,8 +45,8 @@ Launch with `claude --plugin-dir /absolute/path/to/vibe-wise`.
    question under a title naming the decision, before suggesting its own solution
    or implementing the decision. Give a partial answer; check that
    it refines the answer, names the coding scope, and offers Implement this step /
-   Discuss first. Select Discuss
-   first, ask for clarification or propose an alternative, and confirm it stays
+   Talk it through. Select Talk it through,
+   ask for clarification or propose an alternative, and confirm it stays
    paused and updates the approach if needed. Select Implement this step;
    check it writes the code and records only evidenced learning. Restart while a
    Decision Checkpoint is pending and confirm it preserves that pause.
@@ -65,9 +65,11 @@ Launch with `claude --plugin-dir /absolute/path/to/vibe-wise`.
    unfamiliar term means while answering a checkpoint. Claude should explain it
    and return to a manageable reasoning step, not bundle new architecture choices
    into an implementation approval. Use different projects to avoid overfitting.
-   A design-only Decision Checkpoint should offer Confirm approach / Discuss first. Confirming
+   A design-only Decision Checkpoint should offer Confirm and continue / Talk it through. Confirming
    it records the choice and continues to unresolved decisions without writing
    application code. Implementation approval must name a concrete coding scope.
+   Option descriptions should invite clarification and express readiness to proceed;
+   choosing confirmation alone must not be recorded as demonstrated understanding.
 7. **Preference versus reasoning:** Answer a checkpoint with a tentative preference
    and no rationale. Claude should ask one focused question about implications or
    tradeoffs, not invent the learner's reasoning, praise mastery, or immediately
@@ -194,7 +196,7 @@ Tested on 2026-09-28 with Claude Code 2.1.240:
   unfamiliar copy of this repository. A new session restored saved preferences.
 - The fresh-project session asked about persistence, reviewed the learner's JSON
   storage proposal, waited through clarification (the choice was initially named
-  Ask a question; now Discuss first), then wrote
+  Ask a question; now Talk it through), then wrote
   the CLI after Implement. Its five generated CLI/storage tests passed locally.
 
 Those initial live tests used print mode with file tools and covered the plain-text

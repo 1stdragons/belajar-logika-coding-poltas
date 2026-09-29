@@ -59,8 +59,10 @@ Claude:
   If confirmed, we'll record this access rule. Next, we'll work through how the
   server knows who's making the request; we haven't chosen that yet.
 
-  ❯ 1. Confirm approach
-    2. Discuss first
+  ❯ 1. Confirm and continue
+       This approach makes sense to me; move to the next piece.
+    2. Talk it through
+       Ask questions or clarify anything that doesn't make sense before deciding.
 ```
 
 You don't need to know the answer already. Claude can explain unfamiliar concepts, sketch the relevant pieces, and help you tackle a smaller question. You stay involved in forming the plan. Answer in plain English; ask for more help or say “skip” whenever you want.
@@ -68,7 +70,7 @@ You don't need to know the answer already. Claude can explain unfamiliar concept
 Describing what you want sets the requirements. Build Checkpoints ask you to work
 out how it should function; a feature preference doesn't approve an architecture.
 
-**Confirm approach** records a design decision and continues planning. **Implement this step** writes the specific code Claude just described. **Discuss first** lets you ask questions or explore alternatives before either action.
+**Confirm and continue** means the approach makes sense to you and you're ready for the next design decision. **Implement this step** writes the specific code Claude just described. **Talk it through** gives you room to ask questions, clarify anything confusing, or explore alternatives before deciding.
 
 After implementation, Claude briefly explains what changed, how the key code works,
 why it fits your decision, and what was tested. Ask to dig deeper anywhere it's unclear.

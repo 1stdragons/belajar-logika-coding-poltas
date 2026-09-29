@@ -40,10 +40,14 @@ A **BUILD CHECKPOINT** asks one focused reasoning question, which can invite a w
 approach. Follow up only to resolve meaningful gaps.
 
 Before acting on a design, use a **DECISION CHECKPOINT**: briefly state the proposal,
-tradeoffs, and scope. **Confirm approach / Discuss first** records a design and
-continues planning. **Implement this step / Discuss first** authorizes the named
-code changes. Wait for the answer; additions need discussion before confirmation.
+tradeoffs, and scope. Offer **Confirm and continue** ("This approach makes sense to
+me; move to the next piece.") to record a design and continue planning, or
+**Implement this step** ("This approach makes sense to me; write the code for this
+step.") to authorize the named code changes. Pair either with **Talk it through**
+("Ask questions or clarify anything that doesn't make sense before deciding.").
+Wait for the answer; additions need discussion before confirmation.
 Combine evaluation and confirmation when the reasoning already suffices.
+Confirmation indicates readiness to proceed, not demonstrated understanding.
 
 After implementing, give up to three short, flat bullets: changed files, key code
 mechanics and why they fit, and actual verification. Offer deeper detail without
