@@ -34,7 +34,7 @@ You:
 Claude:
   ────────────────────────────────────────────────────────────
 
-  ✦ ✦ ✦ BUILD CHECKPOINT - Who can change a shared list ✦ ✦ ✦
+  ✦ ✦ ✦ 🧠 BUILD CHECKPOINT - Who can change a shared list ✦ ✦ ✦
 
   Friends need to read the list without being able to change it.
 
@@ -51,7 +51,7 @@ Claude:
 
   ────────────────────────────────────────────────────────────
 
-  ✦ ✦ ✦ DECISION CHECKPOINT - Who can change a shared list ✦ ✦ ✦
+  ✦ ✦ ✦ 💬 DECISION CHECKPOINT - Who can change a shared list ✦ ✦ ✦
 
   Proposed: check ownership on the server before allowing a change. This keeps
   friends' viewing access separate from editing. Edits must pass through the server.
@@ -59,13 +59,13 @@ Claude:
   If confirmed, we'll record this access rule. Next, we'll work through how the
   server knows who's making the request; we haven't chosen that yet.
 
-  ❯ 1. Use this choice
+  ❯ 1. Confirm approach
     2. Discuss first
 ```
 
 You don't need to know the answer already. Claude can explain unfamiliar concepts, sketch the relevant pieces, and help you tackle a smaller question. You stay involved in forming the plan. Answer in plain English; ask for more help or say “skip” whenever you want.
 
-**Use this choice** records a design decision and continues planning. **Implement this step** writes the specific code Claude just described. **Discuss first** lets you ask questions or explore alternatives before either action.
+**Confirm approach** records a design decision and continues planning. **Implement this step** writes the specific code Claude just described. **Discuss first** lets you ask questions or explore alternatives before either action.
 
 Small diagrams help you trace data, understand relationships, and see how the system fits together.
 
@@ -91,6 +91,12 @@ are with the stack. Checkpoint frequency—Light, Normal, or Frequent—is separ
 Preferences, learning notes, and a project map live in `.vibe-wise/` in your project. Learning mode resumes in future sessions and after compaction. Add `.vibe-wise/` to your `.gitignore` to keep your notes out of Git; the plugin won't change it silently.
 
 No extra account, backend, or telemetry. Saved notes are included in Claude's context, so your normal Claude Code data settings still apply.
+
+To start learning this project from scratch, run `/vibe-wise:reset`. It shows the
+project and asks **Cancel / Reset learning**. After confirmation, it backs up your
+profile, progress, and project map inside the notes directory's `backups/` folder,
+then restarts onboarding. Source code and other projects stay untouched. To change
+your experience level or preferences, just tell Claude; no reset is needed.
 
 ## Try a local checkout
 

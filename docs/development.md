@@ -1,6 +1,7 @@
 # Development
 
-V1 is a Claude Code skill, Markdown instructions, and one read-only Python hook.
+V1 uses Claude Code skills, Markdown instructions, one read-only Python hook,
+and a small Python helper for confirmed learning resets.
 There are no packages to install. Python 3.8+ is sufficient for the hook and tests.
 
 ## Local checks
@@ -20,6 +21,9 @@ bounded context, and read-only behavior. They do not prove teaching quality.
 Rename coverage verifies that `.sensible-vibes/` notes restore without migration,
 `.vibe-wise/` takes precedence at the same location, and legacy lookup preserves
 repository boundaries, nearest-state selection, and symlink rejection.
+Reset tests cover read-only preview, confirmed backup/reset, stale confirmation,
+legacy and partial notes, nested projects, repeated backups, rejected symlinks,
+backup/write failures, and restoring incomplete onboarding after reset.
 
 ## Conversation smoke tests
 
@@ -61,7 +65,7 @@ Launch with `claude --plugin-dir /absolute/path/to/vibe-wise`.
    unfamiliar term means while answering a checkpoint. Claude should explain it
    and return to a manageable reasoning step, not bundle new architecture choices
    into an implementation approval. Use different projects to avoid overfitting.
-   A design-only Decision Checkpoint should offer Use this choice / Discuss first. Confirming
+   A design-only Decision Checkpoint should offer Confirm approach / Discuss first. Confirming
    it records the choice and continues to unresolved decisions without writing
    application code. Implementation approval must name a concrete coding scope.
 7. **Preference versus reasoning:** Answer a checkpoint with a tentative preference
@@ -72,7 +76,8 @@ Launch with `claude --plugin-dir /absolute/path/to/vibe-wise`.
    diagram shows real components and labeled flows. Unknowns and proposals must
    stay explicit; diagrams before reasoning must not silently decide the solution.
    Build and Decision Checkpoints should start with a divider and bold named title
-   with three `✦` stars on each side,
+   with three `✦` stars on each side and a consistent icon (🧠 Build, 💬 Decision,
+   🔎 System),
    followed by brief context and a bold question (or native picker), with no
    trailing paragraphs obscuring the point where the learner should respond.
 9. **Clarification without steering:** Ask about an unfamiliar concept mid-decision.
@@ -103,6 +108,14 @@ Launch with `claude --plugin-dir /absolute/path/to/vibe-wise`.
     tradeoffs should be tied to the project, not a claim of one correct answer.
     The checkpoint describes a proposal until confirmed and must not invent an
     unresolved issue. No code should be written before implementation approval.
+
+13. **Reset:** In a temporary project with saved learning notes, invoke
+    `/vibe-wise:reset`. Confirm it shows the absolute project and state paths and
+    asks Cancel / Reset learning. Cancel must leave all files unchanged. Invoke
+    again and confirm: original notes must exist in the reported backup, the
+    active profile must be incomplete, and onboarding must ask fresh questions
+    rather than reuse old preferences. Repeat with legacy notes and after restart.
+    If notes change during confirmation, Claude must preview and confirm again.
 
 Do not commit `.vibe-wise/` or test transcripts. The plugin recommends an
 ignore rule during onboarding, but changes `.gitignore` only after telling the
@@ -187,3 +200,15 @@ the revised requirements-question pacing still needs a fresh-session check.
 For 0.1.13, the VibeWise rename passes all 21 hook tests and plugin, marketplace,
 and skill validation. New notes use `.vibe-wise/`; existing `.sensible-vibes/`
 notes remain in place and are restored by the renamed plugin.
+
+For 0.1.14, reset uses a read-only preview and an explicit confirmation before
+calling the helper with that snapshot's token. Backups stay inside the selected
+state directory so its existing ignore rule applies. Only the three learning
+notes are replaced. A replacement failure may leave a partial reset; the helper
+reports failure and the backup path, and the skill stops instead of onboarding.
+All 35 tests and plugin, marketplace, and skill validation pass.
+A live print-mode smoke test verified the text confirmation fallback: preview
+changed no notes, explicit Reset learning backed up all three originals, and
+Claude asked the first onboarding question without carrying forward old preferences.
+The fixture's source file stayed unchanged. Reset's native picker still needs an
+interactive check; the existing Learn picker was verified in earlier testing.
