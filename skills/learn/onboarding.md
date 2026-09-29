@@ -37,6 +37,8 @@ Ask only what's unknown, one question at a time:
 - Programming experience: Beginner / Intermediate / Advanced.
 - Stack familiarity: Beginner / Intermediate / Advanced. Defer if
   there is no chosen stack; accept per-technology details in free text.
+  Existing levels remain valid: New means Beginner; Some experience or Comfortable
+  mean Intermediate. Don't repeat onboarding just to update a label.
 - Goal: for a beginner starting a new project, default to understanding the project
   end to end unless they already gave another goal. Say “I'll guide you through
   how this project works end to end as we build it.” Record this as a default;

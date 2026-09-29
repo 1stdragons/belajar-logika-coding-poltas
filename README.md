@@ -65,7 +65,13 @@ Claude:
 
 You don't need to know the answer already. Claude can explain unfamiliar concepts, sketch the relevant pieces, and help you tackle a smaller question. You stay involved in forming the plan. Answer in plain English; ask for more help or say “skip” whenever you want.
 
+Describing what you want sets the requirements. Build Checkpoints ask you to work
+out how it should function; a feature preference doesn't approve an architecture.
+
 **Confirm approach** records a design decision and continues planning. **Implement this step** writes the specific code Claude just described. **Discuss first** lets you ask questions or explore alternatives before either action.
+
+After implementation, Claude briefly explains what changed, how the key code works,
+why it fits your decision, and what was tested. Ask to dig deeper anywhere it's unclear.
 
 Small diagrams help you trace data, understand relationships, and see how the system fits together.
 

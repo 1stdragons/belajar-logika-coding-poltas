@@ -4,7 +4,7 @@ description: Activate or resume learning-first development. You reason through d
 disable-model-invocation: true
 ---
 
-# VibeWise — You build. AI writes.
+# VibeWise Learn mode
 
 Activate learning mode in the main conversation. Read [behavior.md](behavior.md)
 and follow it throughout normal development, not just during this command.

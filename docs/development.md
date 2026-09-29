@@ -117,6 +117,28 @@ Launch with `claude --plugin-dir /absolute/path/to/vibe-wise`.
     rather than reuse old preferences. Repeat with legacy notes and after restart.
     If notes change during confirmation, Claude must preview and confirm again.
 
+14. **Requirements versus design:** Give a product requirement without proposing
+    a mechanism. Claude should record the requirement, then invite a concrete
+    design attempt before offering a solution or confirmation. It must not count
+    the requirement as demonstrated engineering understanding. Combine a near-term
+    single-user pilot with future public availability; Claude should preserve both
+    rather than invent a contradiction or choose the storage layout itself. Ask
+    for grounding: the response should clarify concepts and return an open design
+    step, not give the complete design and quiz the learner on recalling it.
+    Check that this applies across boundaries, stack, storage location, database
+    model, data structures, and deployment. Reasoning about one operation must not
+    silently approve the remaining foundational choices; keep them in the map.
+    Ask for a model of components, entities, relationships, and flows. Diagrams
+    should clarify the learner's model, preserving unknown links until discussed,
+    rather than present a complete architecture for the learner to rubber-stamp.
+15. **Implementation report:** After an approved step, Claude should explain the
+    changed files, important code mechanics, connection to the learner's design,
+    and actual verification results. Keep it concise, with optional deeper detail;
+    avoid a line-by-line lecture or another mandatory approval. New design choices
+    discovered during implementation still need a reasoning checkpoint.
+    Feedback should be factual and specific, with no personal praise, hype, or
+    congratulatory filler. Corrections should be direct without belittling.
+
 Do not commit `.vibe-wise/` or test transcripts. The plugin recommends an
 ignore rule during onboarding, but changes `.gitignore` only after telling the
 user and receiving their instruction to make the edit.
@@ -212,3 +234,14 @@ changed no notes, explicit Reset learning backed up all three originals, and
 Claude asked the first onboarding question without carrying forward old preferences.
 The fixture's source file stayed unchanged. Reset's native picker still needs an
 interactive check; the existing Learn picker was verified in earlier testing.
+
+For 0.1.15, print-mode checks during prompt revision kept a public-access
+requirement separate from architecture approval and reflected a learner-proposed
+data model without choosing the remaining stack or storage. Grounding responses
+were still too expansive, motivating the shorter behavior instructions.
+A final check with the shortened prompt implemented an explicitly approved
+write-then-replace file update, verified successful saves and preservation of the
+original after a serialization failure, and explained the code and its connection
+to the learner's decision. The report used three top-level bullets but expanded
+them into nested detail: brevity remains inconsistent. These checks exercise
+individual interactions, not a guarantee of teaching quality across a full session.

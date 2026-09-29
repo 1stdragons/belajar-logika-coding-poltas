@@ -53,7 +53,9 @@ No learning events recorded yet.
 
 As learning occurs, add a `## Topic` with concise bullets under Introduced,
 Demonstrated understanding, and Needs reinforcement. Record reasoning evidence,
-not quotations of a whole exchange. Consolidate repeated entries. Keep each
+not quotations of a whole exchange. Product preferences establish requirements;
+they aren't evidence of engineering understanding. Keep learner-proposed reasoning
+distinct from concepts Claude explained. Consolidate repeated entries. Keep each
 topic independently readable so it can be loaded without the whole file.
 While waiting on a Decision Checkpoint, keep a short `## Pending decision` section
 with the proposed approach and what reply is awaited. Remove it once resolved.
@@ -69,12 +71,16 @@ without claiming they are implemented. Keep any proposed coding scope explicit.
 ## Purpose
 [What this software does.]
 
+## Requirements
+[User needs and constraints. These do not automatically settle technical choices.]
+
 ## Components
 [Components, responsibilities, and supporting file paths.]
 
 ## Main Flow
 [Compact text diagram with labeled arrows. Mark unknowns and distinguish proposed,
-chosen, and implemented components.]
+chosen, and implemented components. Reflect the learner's model refined together,
+or verified existing code; don't fill missing relationships with assumed designs.]
 
 ## Data and Trust Boundaries
 [Storage, ownership, auth, external services; unknown when unverified.]
@@ -83,5 +89,6 @@ chosen, and implemented components.]
 [Commands and configuration paths verified in the repository.]
 
 ## Unknowns
-[What still needs inspection or a decision.]
+[Unresolved technical choices and what needs inspection, including relevant stack,
+storage location/model, data structures, interfaces, and deployment choices.]
 ```
