@@ -4,7 +4,7 @@
 
 A Claude Code plugin that puts learning first while AI writes the code. You work through each meaningful build decision: Claude asks how you'd approach it **before suggesting a solution**, waits for your reasoning, then helps refine it. You review the approach together before Claude implements it.
 
-Built for junior engineers under pressure to ship with AI. Practice planning how the pieces fit together, anticipating failures, and checking the result—while keeping ownership of the decisions.
+Built for junior or aspiring engineers under pressure to ship with AI. Practice planning how the pieces fit together, anticipating failures, and checking the result—while keeping ownership of the decisions.
 
 ## Get started
 
