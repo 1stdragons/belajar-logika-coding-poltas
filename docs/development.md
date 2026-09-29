@@ -59,6 +59,10 @@ Launch with `claude --plugin-dir /absolute/path/to/sensible-vibes`.
    A design-only review should offer Use this choice / Discuss first. Confirming
    it records the choice and continues to unresolved decisions without writing
    application code. Implementation approval must name a concrete coding scope.
+7. **Preference versus reasoning:** Answer a checkpoint with a tentative preference
+   and no rationale. Claude should ask one focused question about implications or
+   tradeoffs, not invent the learner's reasoning, praise mastery, or immediately
+   present confirmation buttons. Verify that this holds across different projects.
 
 Do not commit `.sensible-vibes/` or test transcripts. The plugin recommends an
 ignore rule during onboarding, but changes `.gitignore` only after telling the
@@ -120,6 +124,12 @@ to that checkpoint after explaining unfamiliar concepts, without implementing.
 For 0.1.2, a live design-review check offered Use this choice / Discuss first and
 explicitly described recording the choice and moving to the next decision without
 writing code. This check used print mode's text fallback.
+
+For 0.1.4, a tentative preference with no rationale triggered a follow-up question
+instead of confirmation buttons or application code. The first run omitted its
+checkpoint heading; after clarifying that follow-ups keep a heading, the repeat
+used a named checkpoint. These checks establish that the interaction paused, not
+that a complete session will consistently teach good engineering judgment.
 
 All 16 hook tests still pass. The actual `/compact` command still needs an
 interactive smoke test. Checkpoint quality remains model-dependent; these examples
