@@ -28,36 +28,39 @@ Setup asks one question at a time. Use the arrow keys and Enter for choices; pic
 ## What it feels like
 
 ```text
-You: Build a reading list I can share with friends, but only I can edit.
+You:
+  Build a reading list I can share with friends, but only I can edit.
 
 Claude:
-────────────────────────────────────────────────────────────
+  ────────────────────────────────────────────────────────────
 
-✦ ✦ ✦ BUILD CHECKPOINT - Who can change a shared list ✦ ✦ ✦
+  ✦ ✦ ✦ BUILD CHECKPOINT - Who can change a shared list ✦ ✦ ✦
 
-Friends need to read the list without being able to change it.
+  Friends need to read the list without being able to change it.
 
-How would you make sure only the owner can edit?
+  How would you make sure only the owner can edit?
 
 [Claude waits for your reasoning before offering an approach.]
 
-You: I'd check on the server that the person making the change owns the list.
+You:
+  I'd check on the server that the person making the change owns the list.
 
-Claude: That puts the check somewhere visitors can't change it. We'd need to
-check every request that changes the list, even if the UI hides the edit button.
+Claude:
+  That puts the check somewhere visitors can't change it. We'd need to
+  check every request that changes the list, even if the UI hides the edit button.
 
-────────────────────────────────────────────────────────────
+  ────────────────────────────────────────────────────────────
 
-✦ ✦ ✦ DECISION REVIEW - Who can change a shared list ✦ ✦ ✦
+  ✦ ✦ ✦ DECISION REVIEW - Who can change a shared list ✦ ✦ ✦
 
-We'll check ownership on the server before allowing a change. Friends' viewing
-access won't grant editing access. That means edits must pass through the server.
+  We'll check ownership on the server before allowing a change. Friends' viewing
+  access won't grant editing access. That means edits must pass through the server.
 
-If confirmed, we'll record this access rule. Next, we'll work through how the
-server knows who's making the request; we haven't chosen that yet.
+  If confirmed, we'll record this access rule. Next, we'll work through how the
+  server knows who's making the request; we haven't chosen that yet.
 
-❯ 1. Use this choice
-  2. Discuss first
+  ❯ 1. Use this choice
+    2. Discuss first
 ```
 
 You don't need to know the answer already. Claude can explain unfamiliar concepts, sketch the relevant pieces, and help you tackle a smaller question. You stay involved in forming the plan. Answer in plain English; ask for more help or say “skip” whenever you want.
