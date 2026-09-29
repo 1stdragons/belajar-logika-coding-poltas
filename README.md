@@ -68,6 +68,17 @@ Small diagrams help you trace data, understand relationships, and see how the sy
 
 ## Make it yours
 
+Experience changes the support you get, not your ownership of decisions:
+
+| Level | Teaching approach |
+| --- | --- |
+| Beginner | Explain unfamiliar pieces, use diagrams, ask smaller reasoning questions. |
+| Intermediate | Less introductory context; explore interactions and tradeoffs. |
+| Advanced | Probe difficult constraints, failure modes, and design assumptions. |
+
+Everyone reasons first. Claude adapts to what you demonstrate and how familiar you
+are with the stack. Checkpoint frequency—Light, Normal, or Frequent—is separate.
+
 - “Use fewer checkpoints.”
 - “Focus on backend architecture.”
 - “Use multiple-choice questions.”

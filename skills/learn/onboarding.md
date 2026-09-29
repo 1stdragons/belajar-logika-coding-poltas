@@ -31,8 +31,8 @@ folder. Wait for each answer before the next question.
 
 Ask only what's unknown, one question at a time:
 
-- Programming experience: Beginner / Some experience / Comfortable / Advanced.
-- Stack familiarity: New / Some experience / Comfortable / Advanced. Defer if
+- Programming experience: Beginner / Intermediate / Advanced.
+- Stack familiarity: Beginner / Intermediate / Advanced. Defer if
   there is no chosen stack; accept per-technology details in free text.
 - Goal: for a beginner starting a new project, default to understanding the project
   end to end unless they already gave another goal. Say “I'll guide you through

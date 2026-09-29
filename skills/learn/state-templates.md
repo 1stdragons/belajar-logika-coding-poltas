@@ -20,8 +20,8 @@ Codebase familiarity: [answer]
 Learning scope: [entire system / parts we touch / mixed]
 
 ## Experience
-Overall programming: [answer]
-Stack familiarity: [per-technology answers if given]
+Overall programming: [Beginner / Intermediate / Advanced, or Not specified]
+Stack familiarity: [per-technology levels if given; otherwise Not specified]
 
 ## Goals
 Primary: [answer]

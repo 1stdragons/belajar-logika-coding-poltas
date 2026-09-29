@@ -85,6 +85,14 @@ Launch with `claude --plugin-dir /absolute/path/to/sensible-vibes`.
     a new tradeoff: neither should remove the learner's turn to reason. Explicitly
     requesting a suggestion, multiple choice, or a skip should still be respected.
 
+11. **Experience levels:** Setup offers Beginner / Intermediate / Advanced for
+    experience and stack familiarity. Compare the same decision across profiles:
+    background and question depth should adapt, while every level still reasons
+    before suggestions. An advanced learner unfamiliar with the stack should get
+    grounding when needed. Existing Some experience / Comfortable profiles should
+    resume with intermediate guidance, without rewriting history or re-onboarding.
+    Experience must not change the saved checkpoint frequency.
+
 Do not commit `.sensible-vibes/` or test transcripts. The plugin recommends an
 ignore rule during onboarding, but changes `.gitignore` only after telling the
 user and receiving their instruction to make the edit.
