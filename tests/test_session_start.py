@@ -16,7 +16,7 @@ REGISTRATION = CONFIG["hooks"]["SessionStart"][0]
 
 class SessionStartTests(unittest.TestCase):
     def setUp(self):
-        self.temp = tempfile.TemporaryDirectory(prefix="sensible-vibes-test-")
+        self.temp = tempfile.TemporaryDirectory(prefix="vibe-wise-test-")
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name).resolve()
         self.project = self.root / "project with spaces"
@@ -24,7 +24,7 @@ class SessionStartTests(unittest.TestCase):
         (self.project / ".git").mkdir()
 
     def state(self, project=None, mode="active"):
-        directory = (project or self.project) / ".sensible-vibes"
+        directory = (project or self.project) / ".vibe-wise"
         directory.mkdir()
         (directory / "profile.md").write_text(
             f"# Learner Profile\nLearning mode: {mode}\nOnboarding: complete\n"
@@ -84,13 +84,49 @@ class SessionStartTests(unittest.TestCase):
         nested = self.project / "src" / "services"
         nested.mkdir(parents=True)
         (nested / "service.py").write_text("def run():\n    return 'ok'\n")
-        self.assertIn(str(self.project / ".sensible-vibes"), self.context(cwd=nested))
+        self.assertIn(str(self.project / ".vibe-wise"), self.context(cwd=nested))
 
     def test_no_git_project_restores(self):
         project = self.root / "fresh-no-git"
         project.mkdir()
         self.state(project)
         self.assertIn("Checkpoint frequency: Light", self.context(cwd=project))
+
+    def test_legacy_notes_restore_without_migration(self):
+        state = self.state()
+        legacy = state.with_name(".sensible-vibes")
+        state.rename(legacy)
+        before = {p.name: p.read_bytes() for p in legacy.iterdir()}
+        context = self.context(source="compact")
+        self.assertIn("VibeWise is active", context)
+        self.assertIn(str(legacy), context)
+        self.assertIn("Checkpoint frequency: Light", context)
+        self.assertFalse(state.exists())
+        self.assertEqual(before, {p.name: p.read_bytes() for p in legacy.iterdir()})
+
+    def test_new_notes_take_precedence_over_legacy_at_same_location(self):
+        self.state().rename(self.project / ".sensible-vibes")
+        self.state(mode="paused")
+        self.assertIsNone(self.run_hook())
+
+    def test_nearest_legacy_notes_take_precedence_over_parent_notes(self):
+        self.state()
+        child = self.project / "package"
+        child.mkdir()
+        self.state(child, mode="paused").rename(child / ".sensible-vibes")
+        self.assertIsNone(self.run_hook(cwd=child))
+
+    def test_legacy_notes_respect_worktree_boundary(self):
+        self.state().rename(self.project / ".sensible-vibes")
+        child = self.project / "worktree"
+        child.mkdir()
+        (child / ".git").write_text("gitdir: /another/repo/.git/worktrees/test")
+        self.assertIsNone(self.run_hook(cwd=child))
+
+    def test_symlinked_new_state_does_not_fall_back_to_legacy(self):
+        self.state().rename(self.project / ".sensible-vibes")
+        (self.project / ".vibe-wise").symlink_to(self.root / "missing", target_is_directory=True)
+        self.assertIsNone(self.run_hook())
 
     def test_nested_repository_and_worktree_do_not_borrow_parent_profile(self):
         self.state()
@@ -162,7 +198,7 @@ class SessionStartTests(unittest.TestCase):
         state = self.state()
         alternate = self.root / "alternate"
         alternate.mkdir()
-        (alternate / ".sensible-vibes").symlink_to(state, target_is_directory=True)
+        (alternate / ".vibe-wise").symlink_to(state, target_is_directory=True)
         self.assertIsNone(self.run_hook(cwd=alternate))
 
     def test_hook_never_changes_state(self):

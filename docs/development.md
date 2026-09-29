@@ -17,13 +17,16 @@ The tests execute the registered hook command with real JSON stdin in temporary
 projects. They cover activation, restoration, partial onboarding, paused mode,
 subdirectories, repository/worktree boundaries, missing/invalid files, symlinks,
 bounded context, and read-only behavior. They do not prove teaching quality.
+Rename coverage verifies that `.sensible-vibes/` notes restore without migration,
+`.vibe-wise/` takes precedence at the same location, and legacy lookup preserves
+repository boundaries, nearest-state selection, and symlink rejection.
 
 ## Conversation smoke tests
 
 Use an authenticated Claude Code session and temporary copies of projects.
-Launch with `claude --plugin-dir /absolute/path/to/sensible-vibes`.
+Launch with `claude --plugin-dir /absolute/path/to/vibe-wise`.
 
-1. **Fresh project:** Run `/sensible-vibes:learn`. Choose a new project, describe
+1. **Fresh project:** Run `/vibe-wise:learn`. Choose a new project, describe
    a small CLI, and accept preference defaults. Check that all three state files
    are created, the map separates proposed from implemented components, and no
    understanding is marked demonstrated without evidence. Choice questions must
@@ -101,7 +104,7 @@ Launch with `claude --plugin-dir /absolute/path/to/sensible-vibes`.
     The checkpoint describes a proposal until confirmed and must not invent an
     unresolved issue. No code should be written before implementation approval.
 
-Do not commit `.sensible-vibes/` or test transcripts. The plugin recommends an
+Do not commit `.vibe-wise/` or test transcripts. The plugin recommends an
 ignore rule during onboarding, but changes `.gitignore` only after telling the
 user and receiving their instruction to make the edit.
 
@@ -112,7 +115,7 @@ Verified against current first-party documentation on 2026-09-28:
 - [Plugin creation](https://code.claude.com/docs/en/plugins/create): standard
   component directories and `--plugin-dir` for local loading.
 - [Skills](https://code.claude.com/docs/en/skills): the command is
-  `/sensible-vibes:learn`. Explicit invocation starts onboarding; the hook restores
+  `/vibe-wise:learn`. Explicit invocation starts onboarding; the hook restores
   behavior in later sessions only where a learner profile already exists.
 - [Hooks](https://code.claude.com/docs/en/hooks): `SessionStart` sources include
   `startup`, `resume`, `clear`, `compact`, and `fork`. The hook emits
@@ -123,7 +126,7 @@ Verified against current first-party documentation on 2026-09-28:
   the small catalog points to this repository's plugin root. The GitHub install
   instructions work after these files are published to the remote repository.
 - [Anthropic's learning-output-style plugin](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/learning-output-style):
-  inspected its SessionStart configuration and context injection. SensibleVibes
+  inspected its SessionStart configuration and context injection. VibeWise
   supplies its own reasoning-first instructions and leaves implementation to AI.
 
 No `PreCompact` hook is needed: it doesn't provide an opportunity for Claude to
@@ -180,3 +183,7 @@ requirements gathering to one focused question too. After scope confirmation,
 question about the missing flow. Claude left language, storage, and indexing open,
 and changed only learning notes. This verifies the observed grounding behavior;
 the revised requirements-question pacing still needs a fresh-session check.
+
+For 0.1.13, the VibeWise rename passes all 21 hook tests and plugin, marketplace,
+and skill validation. New notes use `.vibe-wise/`; existing `.sensible-vibes/`
+notes remain in place and are restored by the renamed plugin.

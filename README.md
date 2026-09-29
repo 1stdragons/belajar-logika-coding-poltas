@@ -1,4 +1,4 @@
-# SensibleVibes
+# VibeWise
 
 **You build. AI writes.**
 
@@ -13,14 +13,14 @@ You need [Claude Code](https://code.claude.com/docs/en/setup) and Python 3 (`pyt
 In Claude Code, run:
 
 ```text
-/plugin marketplace add nykooi1/sensible-vibes
-/plugin install sensible-vibes@sensible-vibes
+/plugin marketplace add nykooi1/vibe-wise
+/plugin install vibe-wise@vibe-wise
 ```
 
 Restart Claude Code in the project you want to work on, then run:
 
 ```text
-/sensible-vibes:learn
+/vibe-wise:learn
 ```
 
 Setup asks one question at a time. Use the arrow keys and Enter for choices; pick **Use defaults** to skip preference setup. Then ask Claude to build something. Starting fresh or joining an unfamiliar repository both work. For an existing repository, Claude first inspects the code and sketches a small system map.
@@ -86,9 +86,9 @@ are with the stack. Checkpoint frequency—Light, Normal, or Frequent—is separ
 - “Focus on backend architecture.”
 - “Use multiple-choice questions.”
 - “Just implement this one.”
-- “Pause learning.” Resume with `/sensible-vibes:learn`.
+- “Pause learning.” Resume with `/vibe-wise:learn`.
 
-Preferences, learning notes, and a project map live in `.sensible-vibes/` in your project. Learning mode resumes in future sessions and after compaction. Add `.sensible-vibes/` to your `.gitignore` to keep your notes out of Git; the plugin won't change it silently.
+Preferences, learning notes, and a project map live in `.vibe-wise/` in your project. Learning mode resumes in future sessions and after compaction. Add `.vibe-wise/` to your `.gitignore` to keep your notes out of Git; the plugin won't change it silently.
 
 No extra account, backend, or telemetry. Saved notes are included in Claude's context, so your normal Claude Code data settings still apply.
 
@@ -97,10 +97,25 @@ No extra account, backend, or telemetry. Saved notes are included in Claude's co
 Before this version is published, or to develop locally, launch Claude from your project with an absolute path to this checkout:
 
 ```sh
-claude --plugin-dir /absolute/path/to/sensible-vibes
+claude --plugin-dir /absolute/path/to/vibe-wise
 ```
 
-Then run `/sensible-vibes:learn`. [Development and testing](docs/development.md).
+Then run `/vibe-wise:learn`. [Development and testing](docs/development.md).
+
+## Upgrading from SensibleVibes
+
+The plugin and marketplace are now named `vibe-wise`. In Claude Code, run:
+
+```text
+/plugin marketplace remove sensible-vibes
+/plugin marketplace add nykooi1/vibe-wise
+/plugin install vibe-wise@vibe-wise
+```
+
+Removing the old marketplace uninstalls its plugin. Restart Claude, then use
+`/vibe-wise:learn`. Existing `.sensible-vibes/` notes are reused in place; keep their
+Git ignore rule. New projects use `.vibe-wise/`. If both directories exist at the
+same location, `.vibe-wise/` takes precedence; files aren't merged automatically.
 
 ## License
 

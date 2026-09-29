@@ -25,9 +25,11 @@ def read_note(path, limit):
 
 def state_directory(cwd):
     for directory in (cwd, *cwd.parents):
-        state = directory / ".sensible-vibes"
-        if state.exists() or state.is_symlink():
-            return state if state.is_dir() and not state.is_symlink() else None
+        # Prefer the new name at the nearest location; keep legacy notes in place.
+        for name in (".vibe-wise", ".sensible-vibes"):
+            state = directory / name
+            if state.exists() or state.is_symlink():
+                return state if state.is_dir() and not state.is_symlink() else None
         # A .git file is a worktree boundary too. Never borrow another repo's state.
         if (directory / ".git").exists():
             break
@@ -62,7 +64,7 @@ def restore(payload):
     headings = [line for line in lines if line.startswith("## ") and line not in pending]
     topics = "\n".join(pending + headings)[:500]
     context = (
-        "SensibleVibes is active for this project. Restore learning behavior without "
+        "VibeWise is active for this project. Restore learning behavior without "
         "repeating completed onboarding. If onboarding is incomplete, read "
         f"{PLUGIN_ROOT / 'skills/learn/onboarding.md'} and ask only missing questions.\n\n"
         f"{behavior}\n\n"
@@ -79,7 +81,7 @@ def restore(payload):
     # paths should not cause silent truncation of behavior or preferences.
     if len(context) > 9500:
         context = (
-            "SensibleVibes is active. Read the Learn skill and restore its behavior:\n"
+            "VibeWise is active. Read the Learn skill and restore its behavior:\n"
             f"{PLUGIN_ROOT / 'skills/learn/SKILL.md'}\n"
             f"Read profile.md and project-map.md in {state}; "
             "read only relevant progress.md sections. Do not repeat completed onboarding."

@@ -8,7 +8,7 @@ plain-text question. Open-ended answers belong in chat.
 
 Briefly explain: learning comes first. For each meaningful decision, ask how they'd
 approach it before offering suggestions; AI writes the agreed implementation.
-Notes live in .sensible-vibes/. Recommend ignoring that directory in Git. Don't
+Notes live in .vibe-wise/. Recommend ignoring that directory in Git. Don't
 change .gitignore unless requested; announce the edit first.
 
 ## Project

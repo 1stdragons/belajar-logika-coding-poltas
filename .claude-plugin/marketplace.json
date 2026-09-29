@@ -1,12 +1,12 @@
 {
-  "name": "sensible-vibes",
+  "name": "vibe-wise",
   "owner": { "name": "Noah Kim" },
   "metadata": {
-    "description": "SensibleVibes: learn how to build while AI writes the code."
+    "description": "VibeWise: learn how to build while AI writes the code."
   },
   "plugins": [
     {
-      "name": "sensible-vibes",
+      "name": "vibe-wise",
       "source": "./",
       "description": "Learn how to build software while Claude writes the code."
     }
