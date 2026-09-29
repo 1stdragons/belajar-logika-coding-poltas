@@ -138,6 +138,14 @@ Launch with `claude --plugin-dir /absolute/path/to/vibe-wise`.
     discovered during implementation still need a reasoning checkpoint.
     Feedback should be factual and specific, with no personal praise, hype, or
     congratulatory filler. Corrections should be direct without belittling.
+16. **Coherent reasoning and faithful confirmation:** Offer a rough component list
+    before the overall flow is understood. Claude should invite the learner to
+    connect responsibilities and flows rather than immediately start a chain of
+    implementation-detail questions. When the learner is stuck, explain the missing
+    concept directly and return to a meaningful decision, without hints that funnel
+    them toward a predetermined answer. Confirm a narrowly worded proposal, then
+    inspect the notes: unmentioned fields, lifecycle behavior, alternatives, and
+    rationale must remain unresolved, not appear as agreed design or learner reasoning.
 
 Do not commit `.vibe-wise/` or test transcripts. The plugin recommends an
 ignore rule during onboarding, but changes `.gitignore` only after telling the
@@ -245,3 +253,13 @@ original after a serialization failure, and explained the code and its connectio
 to the learner's decision. The report used three top-level bullets but expanded
 them into nested detail: brevity remains inconsistent. These checks exercise
 individual interactions, not a guarantee of teaching quality across a full session.
+
+For 0.1.17, the behavior guide was rewritten around learner-owned design and direct
+concept teaching rather than a fixed question sequence. Final print-mode checks
+asked the learner to assign responsibilities across their proposed system and
+saved a narrowly confirmed design without inventing fields, lifecycle rules, or
+rationale. When the learner said they had been guessing, Claude reopened the
+decision and explained the concept directly. That explanation remained lengthy
+and ended with a comprehension question; consistent pacing and avoiding unnecessary
+quizzes still need real-session evaluation. All 35 automated tests and plugin/skill
+validation pass; these do not measure teaching quality.

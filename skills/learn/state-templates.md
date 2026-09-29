@@ -62,6 +62,9 @@ with the proposed approach and what reply is awaited. Remove it once resolved.
 Include the checkpoint's decision name and stage: awaiting reasoning, choice
 confirmation, or implementation approval. Record confirmed choices in the map
 without claiming they are implemented. Keep any proposed coding scope explicit.
+Confirmation covers only the proposal presented. Don't append unmentioned fields,
+behaviors, rejected alternatives, or reasons to the chosen design. Mark unresolved
+details unknown and Claude's suggestions proposed; never attribute them to the learner.
 
 ## project-map.md
 
