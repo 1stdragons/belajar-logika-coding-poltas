@@ -42,11 +42,11 @@ Launch with `claude --plugin-dir /absolute/path/to/sensible-vibes`.
    first, ask for clarification or propose an alternative, and confirm it stays
    paused and updates the approach if needed. Select Implement this step;
    check it writes the code and records only evidenced learning. Restart while a
-   decision review is pending and confirm it preserves that pause.
+   Decision Checkpoint is pending and confirm it preserves that pause.
 4. **Skip and adaptation:** Say “I'm completely lost.” Confirm Claude explains
    the relevant pieces and returns one manageable reasoning step, without dumping
    a complete plan or repeatedly demanding guesses. Ask for an explanation or say “skip”; it should
-   explain and proceed to review without demanding another attempt. “Just
+   explain and proceed to a Decision Checkpoint without demanding another attempt. “Just
    implement it” should proceed. Make a trivial edit and confirm no checkpoint. After demonstrating
    a concept, check that later questions address new decisions rather than repeat it.
 5. **Lifecycle:** Restart, resume, `/clear`, and `/compact`. Confirm preferences,
@@ -58,7 +58,7 @@ Launch with `claude --plugin-dir /absolute/path/to/sensible-vibes`.
    unfamiliar term means while answering a checkpoint. Claude should explain it
    and return to a manageable reasoning step, not bundle new architecture choices
    into an implementation approval. Use different projects to avoid overfitting.
-   A design-only review should offer Use this choice / Discuss first. Confirming
+   A design-only Decision Checkpoint should offer Use this choice / Discuss first. Confirming
    it records the choice and continues to unresolved decisions without writing
    application code. Implementation approval must name a concrete coding scope.
 7. **Preference versus reasoning:** Answer a checkpoint with a tentative preference
@@ -68,7 +68,7 @@ Launch with `claude --plugin-dir /absolute/path/to/sensible-vibes`.
 8. **Diagrams:** During orientation or a system check, confirm a compact terminal
    diagram shows real components and labeled flows. Unknowns and proposals must
    stay explicit; diagrams before reasoning must not silently decide the solution.
-   Checkpoints and reviews should start with a divider and bold named title
+   Build and Decision Checkpoints should start with a divider and bold named title
    with three `✦` stars on each side,
    followed by brief context and a bold question (or native picker), with no
    trailing paragraphs obscuring the point where the learner should respond.
@@ -92,6 +92,14 @@ Launch with `claude --plugin-dir /absolute/path/to/sensible-vibes`.
     grounding when needed. Existing Some experience / Comfortable profiles should
     resume with intermediate guidance, without rewriting history or re-onboarding.
     Experience must not change the saved checkpoint frequency.
+
+12. **Evaluation and concise confirmation:** Give a confident but flawed proposal;
+    Claude should name the violated constraint rather than praise confidence.
+    Give a sound proposal; it should explain why and combine feedback with a concise
+    Decision Checkpoint, without redundant questions. Compare two viable approaches:
+    tradeoffs should be tied to the project, not a claim of one correct answer.
+    The checkpoint describes a proposal until confirmed and must not invent an
+    unresolved issue. No code should be written before implementation approval.
 
 Do not commit `.sensible-vibes/` or test transcripts. The plugin recommends an
 ignore rule during onboarding, but changes `.gitignore` only after telling the

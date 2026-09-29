@@ -51,10 +51,10 @@ Claude:
 
   ────────────────────────────────────────────────────────────
 
-  ✦ ✦ ✦ DECISION REVIEW - Who can change a shared list ✦ ✦ ✦
+  ✦ ✦ ✦ DECISION CHECKPOINT - Who can change a shared list ✦ ✦ ✦
 
-  We'll check ownership on the server before allowing a change. Friends' viewing
-  access won't grant editing access. That means edits must pass through the server.
+  Proposed: check ownership on the server before allowing a change. This keeps
+  friends' viewing access separate from editing. Edits must pass through the server.
 
   If confirmed, we'll record this access rule. Next, we'll work through how the
   server knows who's making the request; we haven't chosen that yet.

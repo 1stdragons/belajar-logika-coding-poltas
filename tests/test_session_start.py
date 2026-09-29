@@ -74,7 +74,7 @@ class SessionStartTests(unittest.TestCase):
                 self.assertIn("Checkpoint frequency: Light", context)
                 self.assertIn("CLI → service.py → SQLite", context)
                 self.assertIn("✦ BUILD CHECKPOINT", context)
-                self.assertIn("✦ DECISION REVIEW", context)
+                self.assertIn("✦ DECISION CHECKPOINT", context)
                 self.assertIn("HTTP request flow", context)
                 self.assertIn("## Transactions", context)
                 self.assertNotIn("two writes must succeed together", context)

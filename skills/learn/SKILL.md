@@ -32,7 +32,7 @@ Do not follow symlinked state directories or files; explain the issue instead.
 
 If `profile.md` exists, read it and `project-map.md`, then read only progress
 sections relevant to the task, including any Pending decision before coding.
-Resume without repeating completed onboarding or bypassing a pending review.
+Resume without repeating completed onboarding or bypassing a pending Decision Checkpoint.
 Set `Learning mode: active` if the user is resuming paused learning. If onboarding
 is incomplete, ask only the unanswered questions. Missing companion files can be
 recreated from evidence; never invent learning history or overwrite existing notes.

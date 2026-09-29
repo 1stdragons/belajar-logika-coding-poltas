@@ -54,7 +54,7 @@ As learning occurs, add a `## Topic` with concise bullets under Introduced,
 Demonstrated understanding, and Needs reinforcement. Record reasoning evidence,
 not quotations of a whole exchange. Consolidate repeated entries. Keep each
 topic independently readable so it can be loaded without the whole file.
-While waiting on a decision review, keep a short `## Pending decision` section
+While waiting on a Decision Checkpoint, keep a short `## Pending decision` section
 with the proposed approach and what reply is awaited. Remove it once resolved.
 Include the checkpoint's decision name and stage: awaiting reasoning, choice
 confirmation, or implementation approval. Record confirmed choices in the map

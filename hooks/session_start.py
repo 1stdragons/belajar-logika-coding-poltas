@@ -54,8 +54,8 @@ def restore(payload):
 
     behavior = read_note(PLUGIN_ROOT / "skills/learn/behavior.md", 6500)
     project_map = read_note(state / "project-map.md", 1000)
-    # Include pending-review markers first, then a topic index. Claude reads the
-    # relevant bodies; restoration must not silently treat a pending review as approval.
+    # Include pending-decision markers first, then a topic index. Claude reads the
+    # relevant bodies; restoration must not treat a pending checkpoint as approval.
     progress = read_note(state / "progress.md", 16000)
     lines = progress.splitlines()
     pending = [line for line in lines if "pending decision" in line.lower()]
