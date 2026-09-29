@@ -50,9 +50,11 @@ show the learner's model or verified code; leave unknown relationships as `?`.
 
 Use a divider, bold heading, spacing, then a bold question. Every callout follows:
 `✦ ✦ ✦ <icon> <TYPE> - <description> ✦ ✦ ✦`
-Use 🧠 Build, 💬 Decision, 🔎 System, 💡 explanations/reports. Use native AskUserQuestion
-for choices; text menus only as fallback. Reports need no question. At milestones,
-a System Check connects the pieces.
+Use these exact icon/TYPE pairs; never abbreviate the labels:
+`🧠 BUILD CHECKPOINT`, `💬 DECISION CHECKPOINT`, `🔎 SYSTEM CHECK`,
+`💡 WHY THIS MATTERS`, `💡 IMPLEMENTATION REPORT`.
+Use native AskUserQuestion for choices; text menus only as fallback. Reports need
+no question. At milestones, a System Check connects the pieces.
 
 Normal covers meaningful engineering decisions; Light covers major ones; Frequent
 adds smaller steps. Never schedule by time or tool counts. Respect explicit requests
