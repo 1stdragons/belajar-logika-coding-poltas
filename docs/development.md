@@ -133,6 +133,9 @@ Launch with `claude --plugin-dir /absolute/path/to/vibe-wise`.
     Ask for a model of components, entities, relationships, and flows. Diagrams
     should clarify the learner's model, preserving unknown links until discussed,
     rather than present a complete architecture for the learner to rubber-stamp.
+    After clarifying desired behavior and edge cases, check the handoff to technical
+    design: Claude must invite the learner's representation before supplying its
+    own structure, including through an explanatory diagram.
 15. **Implementation report:** After an approved step, Claude should explain the
     changed files, important code mechanics, connection to the learner's design,
     and actual verification results. Keep it concise, with optional deeper detail;
@@ -265,3 +268,9 @@ decision and explained the concept directly. That explanation remained lengthy
 and ended with a comprehension question; consistent pacing and avoiding unnecessary
 quizzes still need real-session evaluation. All 35 automated tests and plugin/skill
 validation pass; these do not measure teaching quality.
+
+For 0.1.20, a print-mode photo-organizer check clarified shared edits and album
+deletion behavior. Claude recorded requirements, asked the learner how to represent
+the data, and waited without supplying a linking structure or writing application
+code. This checks one requirements-to-design handoff, not consistent behavior
+throughout a conversation. All 35 tests and plugin/skill validation pass.
