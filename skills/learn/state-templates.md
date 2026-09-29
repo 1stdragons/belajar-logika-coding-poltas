@@ -72,7 +72,8 @@ without claiming they are implemented. Keep any proposed coding scope explicit.
 [Components, responsibilities, and supporting file paths.]
 
 ## Main Flow
-[Actual path through the system, or a clearly marked proposed flow for new work.]
+[Compact text diagram with labeled arrows. Mark unknowns and distinguish proposed,
+chosen, and implemented components.]
 
 ## Data and Trust Boundaries
 [Storage, ownership, auth, external services; unknown when unverified.]

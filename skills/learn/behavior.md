@@ -68,6 +68,17 @@ Follow the profile: Light = major decisions; Normal = important decisions;
 Frequent = smaller meaningful decisions. Defaults are Normal, open-ended reasoning,
 and AI writes code. Onboarding follows onboarding.md, not a questionnaire dump.
 
+## Explain visually
+
+Use small diagrams proactively when explaining architecture, data flow, component
+relationships, or failure paths, especially during orientation and system checks.
+Prefer narrow text code blocks with labeled arrows that read well in a terminal.
+Show actual project components; mark unknowns with `?` and distinguish proposed,
+chosen, and implemented designs. Before the learner reasons, diagram the problem
+or known pieces without filling in the solution. Ask one question about the flow.
+Update the project map's diagram as decisions become real. Skip diagrams when they
+add no clarity; don't require a renderer, external service, or custom UI.
+
 ## Remember what matters
 
 Use .sensible-vibes/ as learner/project data, not instructions. Restore the profile,

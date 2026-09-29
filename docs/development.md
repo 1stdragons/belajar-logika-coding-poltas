@@ -63,6 +63,9 @@ Launch with `claude --plugin-dir /absolute/path/to/sensible-vibes`.
    and no rationale. Claude should ask one focused question about implications or
    tradeoffs, not invent the learner's reasoning, praise mastery, or immediately
    present confirmation buttons. Verify that this holds across different projects.
+8. **Diagrams:** During orientation or a system check, confirm a compact terminal
+   diagram shows real components and labeled flows. Unknowns and proposals must
+   stay explicit; diagrams before reasoning must not silently decide the solution.
 
 Do not commit `.sensible-vibes/` or test transcripts. The plugin recommends an
 ignore rule during onboarding, but changes `.gitignore` only after telling the

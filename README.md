@@ -47,6 +47,8 @@ Next I'll implement that check in the webhook handler.
 
 Answer in plain English. If you're unsure, say “I don't know” or “skip,” and Claude explains the approach. **Use this choice** records a design decision and continues planning. **Implement this step** writes the specific code Claude just described. **Discuss first** lets you ask questions or explore alternatives before either action.
 
+Small diagrams help you trace data, understand relationships, and see how the system fits together.
+
 ## Make it yours
 
 - “Use fewer checkpoints.”
