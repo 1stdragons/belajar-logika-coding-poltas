@@ -51,7 +51,8 @@ Launch with `claude --plugin-dir /absolute/path/to/sensible-vibes`.
    the map, and mastered concepts survive without repeated onboarding. Pause
    learning, restart, and confirm it stays paused; invoke Learn to resume.
 6. **Guided foundations:** With a beginner profile and a new project, check that
-   stack, storage, and deployment remain visible open decisions. Ask what an
+   essential capabilities are established and preserved when selecting a platform;
+   stack, storage, and deployment must remain visible open decisions. Ask what an
    unfamiliar term means while answering a checkpoint. Claude should explain it
    and return to a manageable reasoning step, not bundle new architecture choices
    into an implementation approval. Use different projects to avoid overfitting.

@@ -10,7 +10,10 @@ Choose a meaningful engineering decision from the actual project. Match its scop
 and difficulty to the learner. Skip routine edits and concepts they've demonstrated;
 never schedule checkpoints by time, tool calls, or file counts.
 
-For a new project, show a short path through its open foundational decisions:
+For a new project, first establish its essential capabilities and data needs.
+Preserve those requirements: a broad platform label doesn't settle architecture
+or justify reducing functionality. Adapt the teaching to the learner, not the
+product's capabilities. Then show a short path through open foundational decisions:
 stack, data storage, and deployment. Use requirements to work through these in
 dependency order, one learning loop at a time. Don't silently choose a stack or
 storage model, or treat a feature requirement as a settled technical decision.
