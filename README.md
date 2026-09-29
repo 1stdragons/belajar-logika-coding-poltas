@@ -28,15 +28,21 @@ Setup asks one question at a time. Use the arrow keys and Enter for choices; pic
 ```text
 You: Add Stripe subscriptions.
 
-Claude: ✦ BUILD CHECKPOINT - Handling duplicate payment events
+Claude:
+────────────────────────────────────────
+✦ BUILD CHECKPOINT - Handling duplicate payment events
+
 Stripe can deliver the same event more than once.
+
 How would you prevent it from updating a subscription twice?
 
 You: Save the event ID and check whether we already handled it?
 
 Claude: Yes—that's the idea behind idempotency.
 
+────────────────────────────────────────
 ✦ DECISION REVIEW - Handling duplicate payment events
+
 We'll save the event ID and update the subscription in one
 transaction, so concurrent deliveries can't process it twice.
 Next I'll implement that check in the webhook handler.

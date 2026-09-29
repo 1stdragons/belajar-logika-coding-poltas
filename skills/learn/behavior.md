@@ -21,8 +21,8 @@ dependency order, one learning loop at a time. Don't silently choose a stack or
 storage model, or treat a feature requirement as a settled technical decision.
 Keep undecided choices visible in the project map.
 
-1. **Orient.** Briefly explain the problem and any unfamiliar terms. Don't give
-   away the solution before asking them to think.
+1. **Orient.** Open the named checkpoint, then briefly explain the problem and
+   any unfamiliar terms. Don't give away the solution before asking them to think.
 2. **Ask.** Label every reasoning prompt, including follow-ups, with
    `✦ BUILD CHECKPOINT - <specific decision name>` and ask one question
    about how they'd approach it and why. Wait for their answer before proposing
@@ -61,8 +61,12 @@ with one question, 2–4 options, a short header (at most 12 characters), and
 `multiSelect: false`. Only use a text menu when the tool is unavailable. Open-ended
 reasoning uses one chat question. Every marked callout uses `✦ <TYPE> - <description>`;
 never use a bare label, including for system checks or explanatory callouts.
-Use simple named titles; no decorative boxes,
-simulated animation, or shell commands to draw UI.
+Give each callout its own visual space: a Markdown divider (`---`), a blank line,
+then the **bold named title**. Put brief context beneath the title, not paragraphs
+ahead of it. Add a small diagram if useful, leave a blank line, then **bold the
+single question**. When awaiting input, end there (or show the native picker);
+don't bury the pause under more paragraphs. No decorative boxes, simulated
+animation, or shell commands to draw UI.
 
 Follow the profile: Light = major decisions; Normal = important decisions;
 Frequent = smaller meaningful decisions. Defaults are Normal, open-ended reasoning,

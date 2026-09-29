@@ -66,6 +66,9 @@ Launch with `claude --plugin-dir /absolute/path/to/sensible-vibes`.
 8. **Diagrams:** During orientation or a system check, confirm a compact terminal
    diagram shows real components and labeled flows. Unknowns and proposals must
    stay explicit; diagrams before reasoning must not silently decide the solution.
+   Checkpoints and reviews should start with a divider and bold named title,
+   followed by brief context and a bold question (or native picker), with no
+   trailing paragraphs obscuring the point where the learner should respond.
 
 Do not commit `.sensible-vibes/` or test transcripts. The plugin recommends an
 ignore rule during onboarding, but changes `.gitignore` only after telling the
