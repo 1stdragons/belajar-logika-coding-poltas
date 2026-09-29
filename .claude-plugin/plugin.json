@@ -1,6 +1,6 @@
 {
   "name": "sensible-vibes",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "You build. AI writes. Learn how to build software while Claude writes the code.",
   "author": { "name": "Noah Kim" },
   "repository": "https://github.com/nykooi1/sensible-vibes",

@@ -69,6 +69,11 @@ Launch with `claude --plugin-dir /absolute/path/to/sensible-vibes`.
    Checkpoints and reviews should start with a divider and bold named title,
    followed by brief context and a bold question (or native picker), with no
    trailing paragraphs obscuring the point where the learner should respond.
+9. **Clarification without steering:** Ask about an unfamiliar concept mid-decision.
+   Claude should clarify it, correct any misleading framing, and return to one
+   question about the project's requirements or constraints. It should not replace
+   reasoning with a solution menu, bundle independent choices, or steer toward an
+   architecture because it offers more learning opportunities.
 
 Do not commit `.sensible-vibes/` or test transcripts. The plugin recommends an
 ignore rule during onboarding, but changes `.gitignore` only after telling the
