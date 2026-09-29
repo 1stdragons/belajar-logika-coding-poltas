@@ -1,0 +1,34 @@
+---
+name: learn
+description: Activate or resume SensibleVibes learning mode in this project. You reason about build decisions while Claude writes the implementation.
+disable-model-invocation: true
+---
+
+# SensibleVibes — You build. AI writes.
+
+Activate learning mode in the main conversation. Read [behavior.md](behavior.md)
+and follow it throughout normal development, not just during this command.
+Do not switch to a subagent or require manual coding by default.
+
+## Locate state
+
+Starting at the current working directory, look upward for `.sensible-vibes/`,
+stopping at the nearest `.git` directory or file (including a worktree root).
+Use the nearest existing state directory within that boundary. If there is none,
+use the Git root, or the current directory for a project without Git. Do not use
+state from a parent repository, another worktree, or the installed plugin folder.
+Do not follow symlinked state directories or files; explain the issue instead.
+
+If `profile.md` exists, read it and `project-map.md`, then read only progress
+sections relevant to the task, including any Pending decision before coding.
+Resume without repeating completed onboarding or bypassing a pending review.
+Set `Learning mode: active` if the user is resuming paused learning. If onboarding
+is incomplete, ask only the unanswered questions. Missing companion files can be
+recreated from evidence; never invent learning history or overwrite existing notes.
+
+If no profile exists, read [onboarding.md](onboarding.md) and run onboarding.
+Use [state-templates.md](state-templates.md) when creating state. These files are
+local Markdown maintained with normal file tools; there is no service to call.
+
+After setup, continue the user's build task. If none was provided, ask what they
+want to build or change. Invoking this skill again should not reset anything.
