@@ -2,7 +2,9 @@
 
 **You build. AI writes.**
 
-A Claude Code plugin that helps you learn how to build software while AI writes the code. At meaningful decisions, Claude asks how you'd approach the problem, refines the approach with you, then writes the implementation when you're ready.
+A Claude Code plugin that puts learning first while AI writes the code. You work through each meaningful build decision: Claude asks how you'd approach it **before suggesting a solution**, waits for your reasoning, then helps refine it. You review the approach together before Claude implements it.
+
+Built for junior engineers under pressure to ship with AI. Practice planning how the pieces fit together, anticipating failures, and checking the result—while keeping ownership of the decisions.
 
 ## Get started
 
@@ -25,33 +27,40 @@ Setup asks one question at a time. Use the arrow keys and Enter for choices; pic
 
 ## What it feels like
 
-```text
-You: Add Stripe subscriptions.
+**You:** Build a reading list I can share with friends, but only I can edit.
 
-Claude:
-────────────────────────────────────────
-✦ BUILD CHECKPOINT - Handling duplicate payment events
+---
 
-Stripe can deliver the same event more than once.
+**✦ BUILD CHECKPOINT - Who can change a shared list**
 
-How would you prevent it from updating a subscription twice?
+Friends need to read the list without being able to change it.
 
-You: Save the event ID and check whether we already handled it?
+**How would you make sure only the owner can edit?**
 
-Claude: Yes—that's the idea behind idempotency.
+*Claude waits for your reasoning before offering an approach.*
 
-────────────────────────────────────────
-✦ DECISION REVIEW - Handling duplicate payment events
+**You:** I'd check on the server that the person making the change owns the list.
 
-We'll save the event ID and update the subscription in one
-transaction, so concurrent deliveries can't process it twice.
-Next I'll implement that check in the webhook handler.
+**Claude:** That puts the check somewhere visitors can't change it. We'd need to
+check every request that changes the list, even if the UI hides the edit button.
 
-1. Implement this step
-2. Discuss first
-```
+---
 
-Answer in plain English. If you're unsure, say “I don't know” or “skip,” and Claude explains the approach. **Use this choice** records a design decision and continues planning. **Implement this step** writes the specific code Claude just described. **Discuss first** lets you ask questions or explore alternatives before either action.
+**✦ DECISION REVIEW - Who can change a shared list**
+
+We'll check ownership on the server before allowing a change. Friends' viewing
+access won't grant editing access. That means edits must pass through the server.
+
+If confirmed, we'll record this access rule. Next, we'll work through how the
+server knows who's making the request; we haven't chosen that yet.
+
+**Use this choice** · **Discuss first**
+
+---
+
+You don't need to know the answer already. Claude can explain unfamiliar concepts, sketch the relevant pieces, and help you tackle a smaller question. You stay involved in forming the plan. Answer in plain English; ask for more help or say “skip” whenever you want.
+
+**Use this choice** records a design decision and continues planning. **Implement this step** writes the specific code Claude just described. **Discuss first** lets you ask questions or explore alternatives before either action.
 
 Small diagrams help you trace data, understand relationships, and see how the system fits together.
 

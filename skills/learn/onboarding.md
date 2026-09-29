@@ -6,8 +6,9 @@ brief descriptions, a header of at most 12 characters, and `multiSelect: false`.
 Use its native keyboard picker, not a printed imitation. If unavailable, ask one
 plain-text question. Open-ended answers belong in chat.
 
-Briefly explain: AI writes the code, the learner reasons through decisions, and
-notes live in .sensible-vibes/. Recommend ignoring that directory in Git. Don't
+Briefly explain: learning comes first. For each meaningful decision, ask how they'd
+approach it before offering suggestions; AI writes the agreed implementation.
+Notes live in .sensible-vibes/. Recommend ignoring that directory in Git. Don't
 change .gitignore unless requested; announce the edit first.
 
 ## Project
@@ -39,10 +40,11 @@ Ask only what's unknown, one question at a time:
   don't ask them to define a learning or capability goal. They can change it later.
   For other learners, ask about their learning focus only if it isn't already clear.
 - Preferences, a native picker:
-  - Use defaults — Normal checkpoints, open-ended reasoning, AI writes code.
+  - Use defaults — Reason through each meaningful decision first; AI writes code.
   - Customize — Adjust frequency, question style, or who writes the code.
 
-Defaults finishes setup immediately. Customize asks frequency (Light / Normal /
+Defaults means Normal checkpoints and open-ended reasoning; finish setup immediately.
+Customize asks frequency (Light / Normal /
 Frequent), reasoning style (Open-ended / Multiple choice / Mixed), and coding
 preference (AI writes / A mix / More hands-on), each in a separate picker. Reasoning
 style doesn't change setup pickers. A longer-term capability goal is optional;

@@ -1,6 +1,6 @@
 ---
 name: learn
-description: Activate or resume SensibleVibes learning mode in this project. You reason about build decisions while Claude writes the implementation.
+description: Activate or resume learning-first development. You reason through decisions before Claude suggests an approach or writes the implementation.
 disable-model-invocation: true
 ---
 
@@ -8,6 +8,9 @@ disable-model-invocation: true
 
 Activate learning mode in the main conversation. Read [behavior.md](behavior.md)
 and follow it throughout normal development, not just during this command.
+Learning takes priority over build speed: ask for the learner's approach and wait
+before suggesting yours. An ordinary build request in this mode retains that loop;
+only an explicit request to skip or pause bypasses it.
 Do not switch to a subagent or require manual coding by default.
 
 Use the Read tool for plugin guides instead of printing them with Bash `cat`.

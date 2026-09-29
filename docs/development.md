@@ -43,8 +43,10 @@ Launch with `claude --plugin-dir /absolute/path/to/sensible-vibes`.
    paused and updates the approach if needed. Select Implement this step;
    check it writes the code and records only evidenced learning. Restart while a
    decision review is pending and confirm it preserves that pause.
-4. **Skip and adaptation:** Say “I don't know” or “skip.” Confirm Claude explains
-   the approach and offers the decision review without quizzing again. “Just
+4. **Skip and adaptation:** Say “I'm completely lost.” Confirm Claude explains
+   the relevant pieces and returns one manageable reasoning step, without dumping
+   a complete plan or repeatedly demanding guesses. Ask for an explanation or say “skip”; it should
+   explain and proceed to review without demanding another attempt. “Just
    implement it” should proceed. Make a trivial edit and confirm no checkpoint. After demonstrating
    a concept, check that later questions address new decisions rather than repeat it.
 5. **Lifecycle:** Restart, resume, `/clear`, and `/compact`. Confirm preferences,
@@ -74,6 +76,13 @@ Launch with `claude --plugin-dir /absolute/path/to/sensible-vibes`.
    question about the project's requirements or constraints. It should not replace
    reasoning with a solution menu, bundle independent choices, or steer toward an
    architecture because it offers more learning opportunities.
+10. **Learning first:** With default preferences, make an ordinary build request.
+    Before any recommendation, solution menu, revealing diagram, dependency install,
+    or application scaffold, Claude must ask for the learner's approach and wait.
+    Answer, then check that refinement doesn't silently decide the next problem.
+    Test unfamiliar concepts with neutral background, and familiar concepts with
+    a new tradeoff: neither should remove the learner's turn to reason. Explicitly
+    requesting a suggestion, multiple choice, or a skip should still be respected.
 
 Do not commit `.sensible-vibes/` or test transcripts. The plugin recommends an
 ignore rule during onboarding, but changes `.gitignore` only after telling the
@@ -145,3 +154,12 @@ that a complete session will consistently teach good engineering judgment.
 All 16 hook tests still pass. The actual `/compact` command still needs an
 interactive smoke test. Checkpoint quality remains model-dependent; these examples
 verify observed behavior, not a guarantee for every conversation.
+
+For 0.1.9, a live print-mode session with default preferences paused an ordinary
+build request before suggesting a stack or writing application code. Its initial
+scope question bundled multiple details; the instructions now explicitly limit
+requirements gathering to one focused question too. After scope confirmation,
+“I'm completely lost” received an incomplete end-to-end diagram and a plain-English
+question about the missing flow. Claude left language, storage, and indexing open,
+and changed only learning notes. This verifies the observed grounding behavior;
+the revised requirements-question pacing still needs a fresh-session check.
