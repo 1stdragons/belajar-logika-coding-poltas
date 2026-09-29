@@ -33,7 +33,7 @@ You: Build a reading list I can share with friends, but only I can edit.
 Claude:
 ────────────────────────────────────────────────────────────
 
-✦ BUILD CHECKPOINT - Who can change a shared list
+✦ ✦ ✦ BUILD CHECKPOINT - Who can change a shared list ✦ ✦ ✦
 
 Friends need to read the list without being able to change it.
 
@@ -48,7 +48,7 @@ check every request that changes the list, even if the UI hides the edit button.
 
 ────────────────────────────────────────────────────────────
 
-✦ DECISION REVIEW - Who can change a shared list
+✦ ✦ ✦ DECISION REVIEW - Who can change a shared list ✦ ✦ ✦
 
 We'll check ownership on the server before allowing a change. Friends' viewing
 access won't grant editing access. That means edits must pass through the server.
