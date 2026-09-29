@@ -56,9 +56,9 @@ not quotations of a whole exchange. Consolidate repeated entries. Keep each
 topic independently readable so it can be loaded without the whole file.
 While waiting on a decision review, keep a short `## Pending decision` section
 with the proposed approach and what reply is awaited. Remove it once resolved.
-Include the checkpoint's decision name and stage: awaiting the learner's reasoning
-or awaiting implementation approval. Don't confuse an unanswered reasoning
-question with an agreed plan ready to implement.
+Include the checkpoint's decision name and stage: awaiting reasoning, choice
+confirmation, or implementation approval. Record confirmed choices in the map
+without claiming they are implemented. Keep any proposed coding scope explicit.
 
 ## project-map.md
 

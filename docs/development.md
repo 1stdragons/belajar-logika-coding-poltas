@@ -37,9 +37,10 @@ Launch with `claude --plugin-dir /absolute/path/to/sensible-vibes`.
    storage or retrying an external request. Confirm Claude asks one reasoning
    question under a title naming the decision, before suggesting its own solution
    or implementing the decision. Give a partial answer; check that
-   it refines the answer and offers Implement / Discuss first. Select Discuss
+   it refines the answer, names the coding scope, and offers Implement this step /
+   Discuss first. Select Discuss
    first, ask for clarification or propose an alternative, and confirm it stays
-   paused and updates the approach if needed. Select Implement;
+   paused and updates the approach if needed. Select Implement this step;
    check it writes the code and records only evidenced learning. Restart while a
    decision review is pending and confirm it preserves that pause.
 4. **Skip and adaptation:** Say “I don't know” or “skip.” Confirm Claude explains
@@ -54,6 +55,9 @@ Launch with `claude --plugin-dir /absolute/path/to/sensible-vibes`.
    unfamiliar term means while answering a checkpoint. Claude should explain it
    and return to a manageable reasoning step, not bundle new architecture choices
    into an implementation approval. Use different projects to avoid overfitting.
+   A design-only review should offer Use this choice / Discuss first. Confirming
+   it records the choice and continues to unresolved decisions without writing
+   application code. Implementation approval must name a concrete coding scope.
 
 Do not commit `.sensible-vibes/` or test transcripts. The plugin recommends an
 ignore rule during onboarding, but changes `.gitignore` only after telling the
@@ -111,6 +115,10 @@ native first-question picker and Enter selection in an interactive terminal.
 The following prompt asked only for the project description. A separate beginner
 conversation kept foundational choices open, asked a named checkpoint, and returned
 to that checkpoint after explaining unfamiliar concepts, without implementing.
+
+For 0.1.2, a live design-review check offered Use this choice / Discuss first and
+explicitly described recording the choice and moving to the next decision without
+writing code. This check used print mode's text fallback.
 
 All 16 hook tests still pass. The actual `/compact` command still needs an
 interactive smoke test. Checkpoint quality remains model-dependent; these examples

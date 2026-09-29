@@ -39,12 +39,13 @@ Claude: Yes—that's the idea behind idempotency.
 ✦ DECISION REVIEW - Handling duplicate payment events
 We'll save the event ID and update the subscription in one
 transaction, so concurrent deliveries can't process it twice.
+Next I'll implement that check in the webhook handler.
 
-1. Implement
+1. Implement this step
 2. Discuss first
 ```
 
-Answer in plain English. If you're unsure, say “I don't know” or “skip,” and Claude explains the approach. Before implementing a checkpoint decision, choose **Implement** or **Discuss first** to ask questions, raise concerns, or explore alternatives. Claude writes the code.
+Answer in plain English. If you're unsure, say “I don't know” or “skip,” and Claude explains the approach. **Use this choice** records a design decision and continues planning. **Implement this step** writes the specific code Claude just described. **Discuss first** lets you ask questions or explore alternatives before either action.
 
 ## Make it yours
 
