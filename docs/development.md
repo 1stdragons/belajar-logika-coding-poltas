@@ -96,8 +96,13 @@ For a manual walkthrough based on the playground notes app, see the
    don't force a short length or fixed width. Tables remain useful for comparisons
    and proposed additions. Every title keeps one leading `✦`
    and its full label in sentence case, followed by a colon, without emojis
-   (for example, `✦ Build checkpoint: <description>`). Use native pickers for choices, with no trailing
-   paragraphs obscuring the point where the learner should respond.
+   (for example, `✦ Build checkpoint: <description>`). Use native pickers for
+   onboarding and confirmations, with no trailing paragraphs obscuring the response point.
+   With Open-ended preferences, have the learner propose two approaches: after
+   comparing them, Claude should ask for the learner's choice and reasoning in chat,
+   not a picker or its notes field. A request for multiple choice or a saved Multiple
+   choice/Mixed preference permits multiple-choice reasoning; it doesn't replace
+   the separate design or implementation confirmation.
 9. **Clarification without steering:** Ask about an unfamiliar concept mid-decision.
    Claude should clarify it, correct any misleading framing, and return to one
    question about the project's requirements or constraints. It should not replace
