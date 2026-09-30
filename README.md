@@ -61,7 +61,7 @@ Claude:
 
   ❯ 1. Confirm and continue
        This approach makes sense to me; move to the next piece.
-    2. Talk it through
+    2. Discuss
        Ask questions or clarify anything that doesn't make sense before deciding.
 ```
 
@@ -70,7 +70,11 @@ You don't need to know the answer already. Claude can explain unfamiliar concept
 Describing what you want sets the requirements. Build Checkpoints ask you to work
 out how it should function; a feature preference doesn't approve an architecture.
 
-**Confirm and continue** means the approach makes sense to you and you're ready for the next design decision. **Implement this step** writes the specific code Claude just described. **Talk it through** gives you room to ask questions, clarify anything confusing, or explore alternatives before deciding.
+**Confirm and continue** means the approach makes sense to you and you're ready for the next design decision. **Implement this step** writes the specific code Claude just described. **Discuss** gives you room to ask questions, clarify anything confusing, or explore alternatives before deciding.
+
+When Claude proposes additional implementation details, it separates them from your
+decisions in a short list or table explaining each addition and why it matters.
+You can question or change any item before proceeding.
 
 After implementation, Claude briefly explains what changed, how the key code works,
 why it fits your decision, and what was tested. Ask to dig deeper anywhere it's unclear.
