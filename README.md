@@ -106,6 +106,23 @@ profile, progress, and project map inside the notes directory's `backups/` folde
 then restarts onboarding. Source code and other projects stay untouched. To change
 your experience level or preferences, just tell Claude; no reset is needed.
 
+## Updating
+
+For automatic updates, open `/plugin` → **Marketplaces** → **vibe-wise** →
+**Enable auto-update**. Auto-update is off by default for third-party marketplaces.
+Claude Code notifies you after an update; restart Claude Code to load the new version.
+
+To update manually, run these in your terminal:
+
+```sh
+claude plugin marketplace update vibe-wise
+claude plugin update vibe-wise@vibe-wise
+```
+
+Then restart Claude Code. Your project learning notes stay intact; no reset is needed.
+Run `claude plugin list` to check the installed version.
+[More about plugin updates](https://code.claude.com/docs/en/discover-plugins#keep-plugins-updated).
+
 ## Try a local checkout
 
 Before this version is published, or to develop locally, launch Claude from your project with an absolute path to this checkout:
