@@ -211,21 +211,6 @@ claude --plugin-dir /absolute/path/to/vibe-wise
 
 Then run `/vibe-wise:learn`. [Development and testing](docs/development.md).
 
-## Upgrading from SensibleVibes
-
-The plugin and marketplace are now named `vibe-wise`. In Claude Code, run:
-
-```text
-/plugin marketplace remove sensible-vibes
-/plugin marketplace add nykooi1/vibe-wise
-/plugin install vibe-wise@vibe-wise
-```
-
-Removing the old marketplace uninstalls its plugin. Restart Claude, then use
-`/vibe-wise:learn`. Existing `.sensible-vibes/` notes are reused in place; keep their
-Git ignore rule. New projects use `.vibe-wise/`. If both directories exist at the
-same location, `.vibe-wise/` takes precedence; files aren't merged automatically.
-
 ## License
 
 [MIT](LICENSE). You can use, modify, and share this software, including commercially. Keep the license notice with copies. The software comes without a warranty.
