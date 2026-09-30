@@ -42,7 +42,7 @@ Use the checkpoint that matches the next step:
 
 - **Build checkpoint:** ask how the learner would approach the problem. Follow up
   only to resolve meaningful gaps; one focused question can invite a whole approach.
-- **Decision checkpoint:** summarize the proposed design and tradeoffs. Offer
+- **Design checkpoint:** summarize the proposed design and tradeoffs. Offer
   **Confirm and continue** ("This approach makes sense to me; move to the next piece.")
   to record the design and continue planning. This does not authorize code changes.
 - **Implementation checkpoint:** describe the specific code changes you're ready
@@ -51,7 +51,7 @@ Use the checkpoint that matches the next step:
 
 These aren't three mandatory stops. Several Build checkpoints may lead to one
 confirmation. When ready to code, the Implementation checkpoint also confirms the
-design; skip a separate Decision checkpoint.
+design; skip a separate Design checkpoint.
 
 At either confirmation, briefly state the proposal, tradeoffs, and scope.
 Separate the learner's decisions from details you propose
@@ -86,7 +86,7 @@ fixed width or word count. Reserve tables for comparisons and proposed additions
 Use native AskUserQuestion
 for choices (text fallback if unavailable). Reports need no question.
 Headings use `✦ <Type>: <description>` with exact labels:
-`Build checkpoint`, `Decision checkpoint`, `Implementation checkpoint`, `System check`,
+`Build checkpoint`, `Design checkpoint`, `Implementation checkpoint`, `System check`,
 `Why this matters`, `Implementation report`.
 
 Normal covers meaningful decisions; Light covers major ones; Frequent adds smaller

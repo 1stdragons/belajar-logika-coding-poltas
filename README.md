@@ -81,7 +81,7 @@ a note with no links is unfiled.
 
 notes ← folder links → folders
 
-✦ Decision checkpoint: Folder membership
+✦ Design checkpoint: Folder membership
 
 Proposed: store notes once and track folder membership in a links table.
 Deleting a folder removes its links and keeps the notes. This supports multiple
@@ -145,11 +145,11 @@ out how it should function; a feature preference doesn't approve an architecture
 | Checkpoint | What happens |
 | --- | --- |
 | **Build** | You reason through how to approach the problem with Claude. |
-| **Decision** | Review the design. **Confirm and continue** records it and continues planning; no code yet. |
+| **Design** | Review the design. **Confirm and continue** records it and continues planning; no code yet. |
 | **Implementation** | Review the specific code changes. **Implement this step** authorizes Claude to make them. |
 
 These aren't three mandatory stops. When ready to code, the Implementation
-checkpoint also confirms the design, skipping a separate Decision checkpoint.
+checkpoint also confirms the design, skipping a separate Design checkpoint.
 Both confirmations offer **Discuss** to ask questions, clarify anything confusing,
 or explore alternatives before deciding.
 

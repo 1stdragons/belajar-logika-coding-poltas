@@ -37,7 +37,8 @@ Do not follow symlinked state directories or files; explain the issue instead.
 If `profile.md` exists, read it and `project-map.md`. Search the entire `progress.md`
 for pending decisions, then read their complete sections and other topics relevant
 to the task. An initial excerpt is not evidence that nothing is pending.
-Resume without repeating completed onboarding or bypassing a pending Decision Checkpoint.
+Resume without repeating completed onboarding or bypassing a pending Design or
+Implementation checkpoint.
 Set `Learning mode: active` if the user is resuming paused learning. If onboarding
 is incomplete, ask only the unanswered questions. Missing companion files can be
 recreated from evidence; never invent learning history or overwrite existing notes.

@@ -60,7 +60,7 @@ projects and keeps generated conversations outside the repository.
 4. **Skip and adaptation:** Say “I'm completely lost.” Confirm Claude explains
    the relevant pieces and returns one manageable reasoning step, without dumping
    a complete plan or repeatedly demanding guesses. Ask for an explanation or say “skip”; it should
-   explain and proceed to a Decision Checkpoint without demanding another attempt. “Just
+   explain and proceed to a Design checkpoint without demanding another attempt. “Just
    implement it” should proceed. Make a trivial edit and confirm no checkpoint. After demonstrating
    a concept, check that later questions address new decisions rather than repeat it.
 5. **Lifecycle:** Restart, resume, `/clear`, and `/compact`. Confirm preferences,
@@ -72,11 +72,11 @@ projects and keeps generated conversations outside the repository.
    unfamiliar term means while answering a checkpoint. Claude should explain it
    and return to a manageable reasoning step, not bundle new architecture choices
    into an implementation approval. Use different projects to avoid overfitting.
-   A design-only Decision Checkpoint should offer Confirm and continue / Discuss. Confirming
+   A design-only Design checkpoint should offer Confirm and continue / Discuss. Confirming
    it records the choice and continues to unresolved decisions without writing
    application code. An Implementation checkpoint must name a concrete coding scope.
    When ready to code, it also confirms the design; don't require a separate
-   Decision checkpoint first. Several Build checkpoints may lead to one confirmation.
+   Design checkpoint first. Several Build checkpoints may lead to one confirmation.
    Option descriptions should invite clarification and express readiness to proceed;
    choosing confirmation alone must not be recorded as demonstrated understanding.
    If Claude proposes additional implementation details, check that a concise list
@@ -121,7 +121,7 @@ projects and keeps generated conversations outside the repository.
 12. **Evaluation and concise confirmation:** Give a confident but flawed proposal;
     Claude should name the violated constraint rather than praise confidence.
     Give a sound proposal; it should explain why and combine feedback with a concise
-    Decision Checkpoint, without redundant questions. Compare two viable approaches:
+    Design checkpoint, without redundant questions. Compare two viable approaches:
     tradeoffs should be tied to the project, not a claim of one correct answer.
     The checkpoint describes a proposal until confirmed and must not invent an
     unresolved issue. No code should be written before implementation approval.

@@ -140,7 +140,7 @@ existing hook/reset behavior; they do not grade the conversations.
 This condensed adaptation of the original sign-in discussion shows why **Discuss**
 matters. It illustrates the interaction, not an exact transcript or a required
 password-storage design. The folder example in the [README](../../README.md#what-it-feels-like)
-shows Build, Decision, and Implementation checkpoints together.
+shows Build, Design, and Implementation checkpoints together.
 
 **Claude:**
 
@@ -162,7 +162,7 @@ A hash lets us verify a password without storing the original. Password storage
 also needs a method designed to make repeated guesses expensive, and a unique
 salt so equal passwords don't produce equal stored hashes.
 
-**✦ Decision checkpoint: Password storage**
+**✦ Design checkpoint: Password storage**
 
 Your proposal: store a password hash. Details to discuss before confirming:
 
@@ -194,5 +194,5 @@ The hashing method and salt handling are still proposals. We haven't confirmed
 them or started implementing.
 
 An Implementation checkpoint comes when a specific coding step is ready. It can
-confirm the design and authorize that step together; don't add a separate Decision
+confirm the design and authorize that step together; don't add a separate Design
 checkpoint just to repeat the same approval.
