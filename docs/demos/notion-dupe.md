@@ -145,9 +145,7 @@ shows Build, Decision, and Implementation checkpoints together.
 
 | ✦ Build checkpoint: Password storage |
 | :--- |
-| |
-| **What would you store so we can check someone's password when they sign in?** |
-| |
+| <br>**What would you store so we can check someone's password when they sign in?**<br><br> |
 
 **You:**
 
