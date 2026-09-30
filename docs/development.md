@@ -31,6 +31,11 @@ backup/write failures, and restoring incomplete onboarding after reset.
 Use an authenticated Claude Code session and temporary copies of projects.
 Launch with `claude --plugin-dir /absolute/path/to/vibe-wise`.
 
+For a reusable walkthrough and opt-in live checks based on the playground notes
+app, see the [Notion-style demo](demos/notion-dupe.md). Its fixtures live in
+`tests/scenarios/notion-dupe.json`; `scripts/notion_demo.py` prepares fresh temporary
+projects and keeps generated conversations outside the repository.
+
 1. **Fresh project:** Run `/vibe-wise:learn`. Choose a new project, describe
    a small CLI, and accept preference defaults. Check that all three state files
    are created, the map separates proposed from implemented components, and no
@@ -45,12 +50,13 @@ Launch with `claude --plugin-dir /absolute/path/to/vibe-wise`.
    storage or retrying an external request. Confirm Claude asks one reasoning
    question under a title naming the decision, before suggesting its own solution
    or implementing the decision. Give a partial answer; check that
-   it refines the answer, names the coding scope, and offers Implement this step /
+   it refines the answer, names the coding scope in an Implementation checkpoint,
+   and offers Implement this step /
    Discuss. Select Discuss,
    ask for clarification or propose an alternative, and confirm it stays
    paused and updates the approach if needed. Select Implement this step;
    check it writes the code and records only evidenced learning. Restart while a
-   Decision Checkpoint is pending and confirm it preserves that pause.
+   confirmation is pending and confirm it preserves that pause.
 4. **Skip and adaptation:** Say “I'm completely lost.” Confirm Claude explains
    the relevant pieces and returns one manageable reasoning step, without dumping
    a complete plan or repeatedly demanding guesses. Ask for an explanation or say “skip”; it should
@@ -68,7 +74,9 @@ Launch with `claude --plugin-dir /absolute/path/to/vibe-wise`.
    into an implementation approval. Use different projects to avoid overfitting.
    A design-only Decision Checkpoint should offer Confirm and continue / Discuss. Confirming
    it records the choice and continues to unresolved decisions without writing
-   application code. Implementation approval must name a concrete coding scope.
+   application code. An Implementation checkpoint must name a concrete coding scope.
+   When ready to code, it also confirms the design; don't require a separate
+   Decision checkpoint first. Several Build checkpoints may lead to one confirmation.
    Option descriptions should invite clarification and express readiness to proceed;
    choosing confirmation alone must not be recorded as demonstrated understanding.
    If Claude proposes additional implementation details, check that a concise list
@@ -84,7 +92,8 @@ Launch with `claude --plugin-dir /absolute/path/to/vibe-wise`.
    stay explicit; diagrams before reasoning must not silently decide the solution.
    Build Checkpoints use a one-column Markdown table: the named title is the header,
    context is an optional body row, and the bold question has its own row. Render
-   the table directly, not in a code fence. Questions may be detailed; don't force
+   the table directly, not in a code fence, with empty table rows above and below
+   the content for spacing. Questions may be detailed; don't force
    a short length or fixed width. Keep diagrams outside the card. Other callouts
    retain the divider, bold title, and spacing. Every title keeps one leading `✦`
    and its full label in sentence case, followed by a colon, without emojis
@@ -146,7 +155,9 @@ Launch with `claude --plugin-dir /absolute/path/to/vibe-wise`.
     own structure, including through an explanatory diagram.
 15. **Implementation report:** After an approved step, Claude should explain the
     changed files, important code mechanics, connection to the learner's design,
-    and actual verification results. Keep it concise, with optional deeper detail;
+    any tests added or updated and what they cover, and actual verification results.
+    Distinguish tests written from checks run; unrun checks must be explicit.
+    Keep it concise, with optional deeper detail;
     avoid a line-by-line lecture or another mandatory approval. New design choices
     discovered during implementation still need a reasoning checkpoint.
     Feedback should be factual and specific, with no personal praise, hype, or
