@@ -189,7 +189,7 @@ are with the stack. Checkpoint frequency—Light, Normal, or Frequent—is separ
 
 - “Use fewer checkpoints.”
 - “Focus on backend architecture.”
-- “Show me options, then ask me to explain my choice.”
+- “Use multiple-choice questions.”
 - “Just implement this one.”
 - “Pause learning.” Resume with `/vibe-wise:learn`.
 

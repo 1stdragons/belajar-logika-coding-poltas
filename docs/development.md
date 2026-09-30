@@ -98,12 +98,7 @@ For a manual walkthrough based on the playground notes app, see the
    and its full label in sentence case, followed by a colon, without emojis
    (for example, `✦ Build checkpoint: <description>`). Use native pickers for
    onboarding and confirmations, with no trailing paragraphs obscuring the response point.
-   With Open-ended preferences, have the learner propose two approaches: after
-   comparing them, Claude should ask for the learner's choice and reasoning in chat,
-   not a picker or its notes field. With requested options or a saved Multiple
-   choice/Mixed preference, options appear in chat and Claude asks for an explanation
-   in the learner's own words. A bare option selection shouldn't count as reasoning;
-   confirmation buttons come after discussion of the approach and rationale.
+   Reasoning questions should be open-ended in chat, not in a picker or its notes field.
 9. **Clarification without steering:** Ask about an unfamiliar concept mid-decision.
    Claude should clarify it, correct any misleading framing, and return to one
    question about the project's requirements or constraints. It should not replace
