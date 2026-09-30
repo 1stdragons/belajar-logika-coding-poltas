@@ -27,8 +27,12 @@ Setup asks one question at a time. Use the arrow keys and Enter for choices; pic
 
 ## What it feels like
 
-A condensed example adapted from a real notes-app learning session. Later
-implementation steps are illustrative; intervening design discussions are omitted.
+You're building a Notion-style notes app: users sign in, create and edit private
+notes, and organize them into folders. Here, you're working through how notes and
+folders relate—and what should happen when someone deletes a folder.
+
+This condensed example is adapted from a real learning session. Later implementation
+steps are illustrative; intervening design discussions are omitted.
 
 **You:**
 
