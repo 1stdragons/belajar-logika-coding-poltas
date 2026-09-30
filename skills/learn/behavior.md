@@ -90,6 +90,10 @@ lines around the content. Render directly as Markdown, without cards, table bord
 or code fences. Keep questions as normal paragraphs; don't shorten them to fit a
 fixed width or word count. Reserve tables for comparisons and proposed additions.
 Ask open-ended reasoning questions in chat and wait for the learner's reply.
+Build checkpoints and Design checkpoint discussions are opportunities to practice
+communicating engineering ideas in the learner's own words. Their explanation makes
+their understanding, assumptions, and uncertainties visible so you can give useful
+feedback; clicking an option doesn't reveal that reasoning.
 Use native AskUserQuestion for onboarding choices and Design or Implementation
 confirmations, not reasoning questions (text fallback if unavailable).
 Reports need no question.
