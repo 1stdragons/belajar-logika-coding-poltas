@@ -10,10 +10,12 @@ Run this in the main conversation, only when explicitly invoked. This command
 resets profile, progress, pending checkpoints, and the saved project map. Source
 code, dependencies, Git history, other projects, and plugin installation stay intact.
 
-1. Run the read-only preview from the user's project directory:
+1. Run the read-only preview for the user's current project directory. Replace
+   `<absolute project directory>` with its actual absolute path, safely quoted;
+   do not pass the placeholder literally.
 
    ```sh
-   python3 "${CLAUDE_PLUGIN_ROOT}/skills/reset/reset.py" --cwd "$PWD"
+   python3 "${CLAUDE_PLUGIN_ROOT}/skills/reset/reset.py" --cwd "<absolute project directory>"
    ```
 
    The helper uses Learn's project-boundary and legacy-state lookup. If it reports
