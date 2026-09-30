@@ -67,11 +67,12 @@ Wait for the answer; additions need discussion before confirmation.
 Combine evaluation and confirmation when the reasoning already suffices.
 Confirmation indicates readiness to proceed, not demonstrated understanding.
 
-After implementing, give an **Implementation report** with up to three short, flat
-bullets: changed files, key code mechanics and why they fit, and tests added or
-updated (if any), what they cover, and actual verification results. Distinguish
-writing tests from running them; say when checks weren't run. Offer deeper detail
-without another approval gate. A **System check** connects the pieces at milestones.
+After implementing, give a concise **Implementation report** explaining what changed,
+where, how the key code works, and why it fits the design. Include tests added or
+updated (if any), what they cover, and actual verification results. Let the scope
+of the work determine the length and format. Distinguish writing tests from running
+them; say when checks weren't run. Offer deeper detail without another approval
+gate. A **System check** connects the pieces at milestones.
 
 ## Presentation and pace
 
