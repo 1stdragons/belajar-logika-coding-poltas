@@ -43,8 +43,6 @@ A note can be in several folders. Deleting a folder should delete its notes.
 **Claude:**
 
 ```text
-────────────────────────────────────────────────────────────────
-
 ✦ Build checkpoint: Deleting a shared note
 
 "Trip ideas" is in both Travel and Summer. Deleting it removes it from both.
@@ -62,8 +60,6 @@ Keep it in Summer. If it has no folders left, keep the note outside any folder.
 
 ```text
 That separates deleting a folder from deleting a note.
-
-────────────────────────────────────────────────────────────────
 
 ✦ Build checkpoint: Connecting notes and folders
 
@@ -84,8 +80,6 @@ Each link records one membership. Several links can point to the same note;
 a note with no links is unfiled.
 
 notes ← folder links → folders
-
-────────────────────────────────────────────────────────────────
 
 ✦ Decision checkpoint: Folder membership
 
@@ -113,8 +107,6 @@ Confirm and continue.
 **Claude:**
 
 ```text
-────────────────────────────────────────────────────────────────
-
 ✦ Implementation checkpoint: Folder membership
 
 I'll add the agreed tables and folder-deletion operation, then test that deleting
@@ -138,8 +130,6 @@ Implement this step.
 **Claude:**
 
 ```text
-────────────────────────────────────────────────────────────────
-
 ✦ Implementation report: Folder membership
 
 - Added the schema migration: each membership references one note and one folder.
