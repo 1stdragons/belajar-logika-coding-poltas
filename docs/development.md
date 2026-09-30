@@ -17,7 +17,8 @@ git diff --check
 The tests execute the registered hook command with real JSON stdin in temporary
 projects. They cover activation, restoration, partial onboarding, paused mode,
 subdirectories, repository/worktree boundaries, missing/invalid files, symlinks,
-bounded context, and read-only behavior. They do not prove teaching quality.
+constant-size restoration instructions as notes grow, and read-only behavior.
+They do not prove that Claude follows the instructions or teaches well.
 Rename coverage verifies that `.sensible-vibes/` notes restore without migration,
 `.vibe-wise/` takes precedence at the same location, and legacy lookup preserves
 repository boundaries, nearest-state selection, and symlink rejection.
@@ -166,10 +167,13 @@ Verified against current first-party documentation on 2026-09-28:
   `/vibe-wise:learn`. Explicit invocation starts onboarding; the hook restores
   behavior in later sessions only where a learner profile already exists.
 - [Hooks](https://code.claude.com/docs/en/hooks): `SessionStart` sources include
-  `startup`, `resume`, `clear`, `compact`, and `fork`. The hook emits
-  `hookSpecificOutput.additionalContext`, keeping it below the 10,000-character
-  limit. It embeds behavior and bounded profile/map excerpts, plus pending-decision
-  markers and a progress topic index; Claude reads full relevant notes when necessary.
+  `startup`, `resume`, `clear`, `compact`, and `fork`. The hook emits a small
+  `hookSpecificOutput.additionalContext` pointing to the Learn guide and selected
+  state directory. It checks the profile for paused mode without a prefix cutoff,
+  but injects no learner-note excerpts or partial topic index. Claude must read the
+  profile/map, search all of progress for pending decisions, and read the complete
+  pending sections plus relevant topics before continuing. Hook output does not
+  grow with learning history; Claude's subsequent file reads still consume context.
 - [Marketplace creation](https://code.claude.com/docs/en/plugin-marketplaces):
   the small catalog points to this repository's plugin root. The GitHub install
   instructions work after these files are published to the remote repository.
@@ -274,3 +278,12 @@ deletion behavior. Claude recorded requirements, asked the learner how to repres
 the data, and waited without supplying a linking structure or writing application
 code. This checks one requirements-to-design handoff, not consistent behavior
 throughout a conversation. All 35 tests and plugin/skill validation pass.
+
+For 0.1.21, restoration uses a small instruction message pointing to source files,
+with no truncated notes or partial progress index. All 37 tests pass, including
+large histories and a paused status beyond the old profile cutoff. Plugin,
+marketplace, and skill validation pass. A live print-mode startup check read the
+Learn/behavior guides and saved notes, found a pending implementation decision
+over 40,000 characters into progress, and resumed its confirmation without writing
+application code. The source fixture stayed unchanged. Compaction events remain
+covered at the hook level; an actual interactive `/compact` check is still pending.

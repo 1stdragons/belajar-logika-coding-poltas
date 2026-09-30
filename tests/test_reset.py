@@ -93,7 +93,9 @@ class ResetTests(unittest.TestCase):
             text=True, capture_output=True, check=True,
         )
         context = json.loads(hook.stdout)["hookSpecificOutput"]["additionalContext"]
-        self.assertIn("Onboarding reset: pending", context)
+        self.assertIn(str(state), context)
+        self.assertIn("Read profile.md and project-map.md", context)
+        self.assertIn("If onboarding is incomplete", context)
         self.assertNotIn("Awaiting implementation approval", context)
 
     def test_nested_directory_and_legacy_notes(self):

@@ -32,8 +32,9 @@ create `.vibe-wise/` at the Git root, or current directory without Git. Do not u
 state from a parent repository, another worktree, or the installed plugin folder.
 Do not follow symlinked state directories or files; explain the issue instead.
 
-If `profile.md` exists, read it and `project-map.md`, then read only progress
-sections relevant to the task, including any Pending decision before coding.
+If `profile.md` exists, read it and `project-map.md`. Search the entire `progress.md`
+for pending decisions, then read their complete sections and other topics relevant
+to the task. An initial excerpt is not evidence that nothing is pending.
 Resume without repeating completed onboarding or bypassing a pending Decision Checkpoint.
 Set `Learning mode: active` if the user is resuming paused learning. If onboarding
 is incomplete, ask only the unanswered questions. Missing companion files can be

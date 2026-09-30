@@ -71,12 +71,11 @@ class SessionStartTests(unittest.TestCase):
             with self.subTest(source=source):
                 self.assertTrue(re.fullmatch(REGISTRATION["matcher"], source))
                 context = self.context(source=source)
-                self.assertIn("Checkpoint frequency: Light", context)
-                self.assertIn("CLI → service.py → SQLite", context)
-                self.assertIn("🧠 BUILD CHECKPOINT", context)
-                self.assertIn("💬 DECISION CHECKPOINT", context)
-                self.assertIn("HTTP request flow", context)
-                self.assertIn("## Transactions", context)
+                self.assertIn(str(ROOT / "skills/learn/SKILL.md"), context)
+                self.assertIn(str(self.project / ".vibe-wise"), context)
+                self.assertIn("Read profile.md and project-map.md", context)
+                self.assertIn("Search the entire progress.md", context)
+                self.assertNotIn("Checkpoint frequency: Light", context)
                 self.assertNotIn("two writes must succeed together", context)
 
     def test_existing_repo_restores_from_nested_working_directory(self):
@@ -90,7 +89,7 @@ class SessionStartTests(unittest.TestCase):
         project = self.root / "fresh-no-git"
         project.mkdir()
         self.state(project)
-        self.assertIn("Checkpoint frequency: Light", self.context(cwd=project))
+        self.assertIn(str(project / ".vibe-wise"), self.context(cwd=project))
 
     def test_legacy_notes_restore_without_migration(self):
         state = self.state()
@@ -100,7 +99,7 @@ class SessionStartTests(unittest.TestCase):
         context = self.context(source="compact")
         self.assertIn("VibeWise is active", context)
         self.assertIn(str(legacy), context)
-        self.assertIn("Checkpoint frequency: Light", context)
+        self.assertIn("Read profile.md and project-map.md", context)
         self.assertFalse(state.exists())
         self.assertEqual(before, {p.name: p.read_bytes() for p in legacy.iterdir()})
 
@@ -156,23 +155,49 @@ class SessionStartTests(unittest.TestCase):
             "Learning mode: active\nOnboarding: incomplete\n"
             "Remaining onboarding: stack familiarity\n"
         )
-        self.assertIn("Remaining onboarding: stack familiarity", self.context())
+        context = self.context()
+        self.assertIn(str(state), context)
+        self.assertIn("If onboarding is incomplete", context)
+        self.assertIn("ask only unanswered questions", context)
 
     def test_missing_map_and_progress_do_not_discard_preferences(self):
         state = self.state()
         (state / "project-map.md").unlink()
         (state / "progress.md").unlink()
-        self.assertIn("Checkpoint frequency: Light", self.context())
+        context = self.context()
+        self.assertIn(str(state), context)
+        self.assertIn("Discover optional files before reading", context)
+        self.assertIn("Recreate missing notes only from evidence", context)
 
-    def test_oversized_state_is_bounded_and_signals_excerpt(self):
+    def test_large_notes_do_not_change_bootstrap_or_hide_pending_restore(self):
         state = self.state()
+        before = self.context(source="compact")
         with (state / "profile.md").open("a") as stream:
             stream.write("a" * 100000)
         (state / "project-map.md").write_text("b" * 100000)
-        context = self.context()
+        (state / "progress.md").write_text(
+            "## Earlier learning\n" + "Older summary.\n" * 10000 +
+            "## Pending decision\nAwaiting approval to implement SQLite.\n"
+        )
+        context = self.context(source="compact")
         self.assertLess(len(context), 10000)
-        self.assertIn("Excerpt", context)
-        self.assertIn("Checkpoint frequency: Light", context)
+        self.assertEqual(context, before)
+        self.assertIn("Search the entire progress.md", context)
+        self.assertIn("read their complete sections", context)
+        self.assertNotIn("Earlier learning", context)
+        self.assertNotIn("SQLite", context)
+
+    def test_paused_mode_beyond_old_profile_cutoff_is_respected(self):
+        state = self.state()
+        (state / "profile.md").write_text(
+            "# Profile\n" + "Older preference.\n" * 1000 + "Learning mode: paused\n"
+        )
+        self.assertIsNone(self.run_hook(source="compact"))
+
+    def test_legacy_profile_without_mode_still_restores(self):
+        state = self.state()
+        (state / "profile.md").write_text("# Learner Profile\nExperience: Beginner\n")
+        self.assertIn(str(state), self.context())
 
     def test_malformed_inputs_exit_cleanly(self):
         for raw in ("", "{", "[]", "null", "42", '{"cwd": 4}',
@@ -182,7 +207,7 @@ class SessionStartTests(unittest.TestCase):
 
     def test_unreadable_or_empty_profile_does_not_activate(self):
         state = self.state()
-        for content in (b"", b"\xff\xfe"):
+        for content in (b"", b" \n\t", b"\xff\xfe"):
             (state / "profile.md").write_bytes(content)
             self.assertIsNone(self.run_hook())
 
@@ -214,10 +239,12 @@ class SessionStartTests(unittest.TestCase):
             stream.write("## Pending decision\nUse SQLite. Awaiting Implement or a question.\n"
                          "- Pending decision: JSON storage; waiting for Implement.\n")
         context = self.context(source="compact")
-        self.assertIn("## Pending decision", context)
+        self.assertIn("Search the entire progress.md for pending decisions", context)
         self.assertIn("before coding", context)
         self.assertIn("await implementation approval", context)
-        self.assertIn("JSON storage; waiting for Implement", context)
+        self.assertIn("Restarting or compacting is not approval", context)
+        self.assertNotIn("Use SQLite", context)
+        self.assertNotIn("JSON storage", context)
 
 
 if __name__ == "__main__":
