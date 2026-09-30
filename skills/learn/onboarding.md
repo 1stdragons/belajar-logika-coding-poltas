@@ -9,8 +9,9 @@ brief descriptions, a header of at most 12 characters, and `multiSelect: false`.
 Use its native keyboard picker, not a printed imitation. If unavailable, ask one
 plain-text question. Open-ended answers belong in chat.
 
-Briefly explain: learning comes first. For each meaningful decision, ask how they'd
-approach it before offering suggestions; AI writes the agreed implementation.
+Briefly explain: learning comes first. Ask for their approach, then give feedback,
+explain unfamiliar concepts, and ask follow-ups where needed. Their reasoning shapes
+the design; AI writes the agreed implementation. Suggestions aren't an automatic next step.
 Notes live in .vibe-wise/. Recommend ignoring that directory in Git. Don't
 change .gitignore unless requested; announce the edit first.
 

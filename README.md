@@ -2,7 +2,7 @@
 
 **You build. AI writes.**
 
-A Claude Code plugin that puts learning first while AI writes the code. You work through each meaningful build decision: Claude asks how you'd approach it **before suggesting a solution**, waits for your reasoning, then helps refine it. You review the approach together before Claude implements it.
+A Claude Code plugin that puts learning first while AI writes the code. You work through each meaningful build decision: Claude **asks for your approach first**, then gives feedback, explains unfamiliar concepts, and asks follow-ups where needed. Your reasoning shapes the design. You review the approach together before Claude implements it.
 
 Built for junior or aspiring engineers under pressure to ship with AI. Practice planning how the pieces fit together, anticipating failures, and checking the result—while keeping ownership of the decisions.
 
@@ -37,7 +37,7 @@ Claude:
   | Friends need to read the list without being able to change it. |
   | **How would you make sure only the owner can edit?** |
 
-[Claude waits for your reasoning before offering an approach.]
+[Claude waits for your reasoning before responding.]
 
 You:
   I'd check on the server that the person making the change owns the list.
