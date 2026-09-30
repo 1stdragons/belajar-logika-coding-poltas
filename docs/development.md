@@ -82,11 +82,13 @@ Launch with `claude --plugin-dir /absolute/path/to/vibe-wise`.
 8. **Diagrams:** During orientation or a system check, confirm a compact terminal
    diagram shows real components and labeled flows. Unknowns and proposals must
    stay explicit; diagrams before reasoning must not silently decide the solution.
-   Build and Decision Checkpoints should start with a divider and bold named title
-   with one leading `✦` star and a consistent icon (🧠 Build, 💬 Decision,
-   🔎 System),
-   followed by brief context and a bold question (or native picker), with no
-   trailing paragraphs obscuring the point where the learner should respond.
+   Build Checkpoints use a one-column Markdown table: the named title is the header,
+   context is an optional body row, and the bold question has its own row. Render
+   the table directly, not in a code fence. Questions may be detailed; don't force
+   a short length or fixed width. Keep diagrams outside the card. Other callouts
+   retain the divider, bold title, and spacing. Every title keeps one leading `✦`
+   and its full label/icon. Use native pickers for choices, with no trailing
+   paragraphs obscuring the point where the learner should respond.
 9. **Clarification without steering:** Ask about an unfamiliar concept mid-decision.
    Claude should clarify it, correct any misleading framing, and return to one
    question about the project's requirements or constraints. It should not replace

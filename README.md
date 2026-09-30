@@ -32,13 +32,10 @@ You:
   Build a reading list I can share with friends, but only I can edit.
 
 Claude:
-  ────────────────────────────────────────────────────────────
-
-  ✦ 🧠 BUILD CHECKPOINT - Who can change a shared list
-
-  Friends need to read the list without being able to change it.
-
-  How would you make sure only the owner can edit?
+  | ✦ 🧠 BUILD CHECKPOINT - Who can change a shared list |
+  | :--- |
+  | Friends need to read the list without being able to change it. |
+  | **How would you make sure only the owner can edit?** |
 
 [Claude waits for your reasoning before offering an approach.]
 
