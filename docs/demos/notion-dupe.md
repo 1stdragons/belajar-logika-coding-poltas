@@ -1,36 +1,19 @@
 # Notion-style notes app demo
 
-Rehearse the learning flow from the playground conversation: define the scope,
-explore folder deletion, propose the data relationships, and discuss sign-in.
-The scenario uses paraphrased learner inputs and synthetic notes. It includes no
-private transcript, credentials, or generated application source.
-
-The original conversation loaded VibeWise 0.1.23 and had an existing starter.
-This demo loads the current checkout and starts clean, so the current checkpoint titles
-and wording apply. Expect the same learning opportunities, not identical replies
-or checkpoint ordering. No changes to the plugin's teaching prompts are needed.
+A manual walkthrough adapted from the playground conversation: define the scope,
+explore folder deletion, propose data relationships, and discuss sign-in. Responses
+are paraphrased examples; Claude's wording and question order will vary.
 
 ## Start a fresh recording
 
-From the VibeWise repository, in a terminal with Claude Code installed and signed in:
-
-```sh
-python3 scripts/notion_demo.py prepare --launch
-```
-
-The helper creates a new temporary project and launches interactive Claude with
-this checkout. It skips user/project/local settings and external MCP configuration
-to keep other installed plugins out of the rehearsal. Managed settings still apply.
-It doesn't reset or modify your existing playground. No dependencies or database
-are installed, and you don't need to run `git init`.
-
-In Claude, enter `/vibe-wise:learn`. Choose **New project**, describe a Notion-style
-notes app, choose **Beginner**, then **Use defaults**. Stack familiarity can wait
-until you choose a stack.
+Install VibeWise using the README instructions. Open a new, empty folder in your
+terminal and start `claude`, then enter `/vibe-wise:learn`. Choose **New project**,
+describe a Notion-style notes app, choose **Beginner**, then **Use defaults**.
+Stack familiarity can wait until you choose a stack. No `git init` is needed.
 
 Use these responses when the relevant question comes up. Follow the actual
-conversation; don't paste the whole script or jump past a question you don't
-understand. Claude may need a different follow-up.
+conversation rather than pasting the entire script. Ask for clarification whenever
+something is unclear.
 
 | Moment | Learner input | What to look for |
 | :--- | :--- | :--- |
@@ -44,101 +27,21 @@ understand. Claude may need a different follow-up.
 | Discuss an addition | Select **Discuss**: “What is a salt, and why does it help?” | The agent explains and keeps implementation paused. |
 | Zoom out | “Can we trace the whole design so far?” | A system diagram distinguishes your choices from open questions. |
 
-Choose **Confirm and continue** only when the displayed design makes sense to you.
-It records the choice; it doesn't authorize implementation. If recording ends
-here, you've shown the reasoning and discussion loop. To continue building, choose
-the remaining technology decisions and approve one concrete scope with
-**Implement this step**. Expect an implementation report afterward. Dependency
-setup, Docker, and app implementation are outside the automated scenes below.
+Choose **Confirm and continue** when the design makes sense to you; this records
+it without authorizing code. Once the remaining choices for a concrete step are
+resolved, choose **Implement this step**. Expect a report explaining changes,
+reasoning, tests written, and checks actually run.
 
-Each `prepare` makes a new project. For another take, exit Claude and run the
-command again. `/vibe-wise:reset` resets learning notes but keeps application
-code, so it isn't a clean-project reset. Run folders remain in the system temp
-directory for inspection; save anything you want to keep before your OS cleans it.
+For another take, use another empty folder. `/vibe-wise:reset` resets learning
+notes but keeps application code, so it isn't a clean-project reset.
 
-## Rehearse a specific scene
+## What to check
 
-```sh
-python3 scripts/notion_demo.py prepare --scene folders --launch
-python3 scripts/notion_demo.py prepare --scene data-model --launch
-python3 scripts/notion_demo.py prepare --scene sign-in --launch
-```
-
-These start with **synthetic saved decisions** to skip earlier conversation.
-The helper prints the first message to send. When filming a shortcut, describe
-where you're picking up; these fixtures aren't evidence of earlier learner reasoning.
-Omit `--launch` to prepare only and print the launch commands.
-
-## Run conversation checks
-
-These use your signed-in Claude account and consume usage. Each invocation gets
-a `--max-budget-usd` limit (default 1) and a 180-second timeout; multi-turn scenes
-invoke Claude more than once. They use the configured default model and record
-its reported name. Use `--claude /path/to/claude` if it isn't on PATH.
-
-This developer tool runs only when you launch it; installing VibeWise or activating
-Learn does not run it. Child processes inherit your terminal environment, and
-Claude Code handles its own authentication. The runner does not extract credentials
-or send them to a separate service.
-
-```sh
-python3 scripts/notion_demo.py check --scene fresh
-python3 scripts/notion_demo.py check --scene folders
-python3 scripts/notion_demo.py check --scene data-model
-python3 scripts/notion_demo.py check --scene sign-in
-```
-
-The runner resumes the same session for each learner turn. It exposes file tools
-and the Skill tool, but no shell, network tools, or native question picker. This
-tests the text fallback; use the interactive demo to review pickers and rendering.
-It stops on CLI failures, budget exhaustion, or application files appearing before
-approval. Those mechanical checks do **not** establish that the teaching was good.
-
-Every run prints its artifact directory:
-
-```text
-vibe-wise-notion-<unique>/
-├── project/           Empty project or synthetic .vibe-wise notes
-├── run.json           Scene, plugin version, guide hashes, session ID
-├── review.json        Human-review criteria for that scene
-├── turn-01.json       Learner input, visible response, tools, model, result
-└── conversation.txt   Visible conversation across completed turns
-```
-
-Review the conversation and saved notes against `review.json`. Check that no
-future solution appears before a learner attempt and that proposed additions
-haven't become confirmed choices without approval. Future scripted answers and
-review criteria aren't copied into the project or included in the model prompts.
-
-Don't preserve mistakes from the original as expected answers. In particular,
-flag unsupported absolutes about database access or data types, praise without
-evaluation, and claims that one architecture is required merely for learning.
-Avoid exact wording snapshots: a different, sound follow-up should still pass review.
-
-The runner and fixtures live in the repo; generated conversations stay outside it.
-The regular unit tests validate fixture isolation and runner failure handling
-without invoking Claude:
-
-```sh
-python3 -B -m unittest discover -s tests -v
-```
-
-## Initial verification
-
-On 2026-09-30, all four live scenes completed without creating application files
-before approval. These runs preceded the separate Implementation checkpoint label.
-Fresh onboarding asked only the project-situation question. The
-staged reasoning scenes emitted the then-current Build checkpoint cards (since
-replaced by plain headings), and the data-model scene waited for the learner's
-links-table proposal.
-
-Human review found differences from the original: the folder scene repeated a
-clarification after the learner revised the deletion rule, and sign-in asked a
-further reasoning question instead of immediately presenting proposed additions.
-The later request for an explanation received one, but this run did not exercise
-a native Discuss picker or the proposed-additions table. Those remain interactive
-review points, not claimed passes. The 42 unit tests validate the tooling and
-existing hook/reset behavior; they do not grade the conversations.
+- Claude asks for your approach before supplying a design.
+- Your reasoning changes the proposal, rather than merely confirming Claude's plan.
+- Unfamiliar concepts get direct explanations; suggestions stay labeled as proposals.
+- **Discuss** keeps implementation paused while you ask questions.
+- Confirmed design choices and implemented code remain distinct in the notes.
 
 ## Example: discussing an unfamiliar detail
 

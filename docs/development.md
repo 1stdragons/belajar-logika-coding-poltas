@@ -31,10 +31,8 @@ backup/write failures, and restoring incomplete onboarding after reset.
 Use an authenticated Claude Code session and temporary copies of projects.
 Launch with `claude --plugin-dir /absolute/path/to/vibe-wise`.
 
-For a reusable walkthrough and opt-in live checks based on the playground notes
-app, see the [Notion-style demo](demos/notion-dupe.md). Its fixtures live in
-`tests/scenarios/notion-dupe.json`; `scripts/notion_demo.py` prepares fresh temporary
-projects and keeps generated conversations outside the repository.
+For a manual walkthrough based on the playground notes app, see the
+[Notion-style demo](demos/notion-dupe.md).
 
 1. **Fresh project:** Run `/vibe-wise:learn`. Choose a new project, describe
    a small CLI, and accept preference defaults. Check that all three state files

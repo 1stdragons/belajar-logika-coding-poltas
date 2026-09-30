@@ -5,6 +5,7 @@ import os
 from pathlib import Path
 import re
 import subprocess
+import sys
 import tempfile
 import unittest
 
@@ -50,7 +51,12 @@ class SessionStartTests(unittest.TestCase):
         result = subprocess.run(
             REGISTRATION["hooks"][0]["command"], shell=True,
             input=payload, text=True, capture_output=True, timeout=5,
-            env={**os.environ, "CLAUDE_PLUGIN_ROOT": str(ROOT)}, cwd=self.root,
+            # The hook needs a Python executable and its plugin location, not the
+            # developer's credentials or unrelated environment configuration.
+            env={
+                "PATH": os.pathsep.join((str(Path(sys.executable).parent), os.defpath)),
+                "CLAUDE_PLUGIN_ROOT": str(ROOT),
+            }, cwd=self.root,
         )
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(result.stderr, "")

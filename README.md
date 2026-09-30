@@ -174,9 +174,6 @@ which checks ran with their results. Ask to dig deeper anywhere it's unclear.
 
 Small diagrams help you trace data, understand relationships, and see how the system fits together.
 
-[Recreate the notes-app demo](docs/demos/notion-dupe.md), including discussing
-password storage and questioning details Claude proposes.
-
 ## Make it yours
 
 Experience changes the support you get, not your ownership of decisions:
