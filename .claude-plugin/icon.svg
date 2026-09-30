@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">VibeWise</title>
+  <desc id="desc">A pale green VW monogram on a dark green rounded square.</desc>
+  <rect width="256" height="256" rx="48" fill="#15231c"/>
+  <g fill="none" stroke="#d9f99d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M36 78 66 178 96 78"/>
+    <path d="M115 78 137 178 166 121 195 178 220 78"/>
+  </g>
+</svg>

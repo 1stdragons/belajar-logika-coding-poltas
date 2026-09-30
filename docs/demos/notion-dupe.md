@@ -76,6 +76,11 @@ a `--max-budget-usd` limit (default 1) and a 180-second timeout; multi-turn scen
 invoke Claude more than once. They use the configured default model and record
 its reported name. Use `--claude /path/to/claude` if it isn't on PATH.
 
+This developer tool runs only when you launch it; installing VibeWise or activating
+Learn does not run it. Child processes inherit your terminal environment, and
+Claude Code handles its own authentication. The runner does not extract credentials
+or send them to a separate service.
+
 ```sh
 python3 scripts/notion_demo.py check --scene fresh
 python3 scripts/notion_demo.py check --scene folders
