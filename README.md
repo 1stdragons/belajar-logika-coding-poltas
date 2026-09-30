@@ -8,7 +8,18 @@ Built for junior or aspiring engineers under pressure to ship with AI. Practice 
 
 ## Get started
 
-You need [Claude Code](https://code.claude.com/docs/en/setup) and Python 3 (`python3` on your PATH).
+You need [Claude Code](https://code.claude.com/docs/en/setup) and
+[Python 3](https://www.python.org/downloads/). VibeWise uses Python to restore
+learning context and reset learning notes. No extra Python packages are needed.
+
+Check in the terminal where you launch Claude Code:
+
+```sh
+python3 --version
+```
+
+If the command isn't found, install Python from the link above, reopen your terminal,
+and make sure `python3 --version` works before continuing.
 
 In Claude Code, run:
 
