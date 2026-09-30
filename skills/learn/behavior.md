@@ -72,7 +72,7 @@ Build Checkpoints use a one-column Markdown table as a card, rendered directly
 without a code fence. Put the named heading in the header, any needed context in
 a body row, and the bold question in its own row:
 
-| ✦ 🧠 BUILD CHECKPOINT - <description> |
+| ✦ BUILD CHECKPOINT - <description> |
 | :--- |
 | <Context, when needed> |
 | **<Reasoning question>** |
@@ -81,9 +81,9 @@ The question can be as detailed as needed; don't shorten it to fit a fixed width
 or word count. Keep diagrams outside the table so they stay readable.
 Other callouts use a divider, bold heading, and spacing. Use native AskUserQuestion
 for choices (text fallback if unavailable). Reports need no question.
-Headings use `✦ <icon> <TYPE> - <description>` with exact labels:
-`🧠 BUILD CHECKPOINT`, `💬 DECISION CHECKPOINT`, `🔎 SYSTEM CHECK`,
-`💡 WHY THIS MATTERS`, `💡 IMPLEMENTATION REPORT`.
+Headings use `✦ <TYPE> - <description>` with exact labels:
+`BUILD CHECKPOINT`, `DECISION CHECKPOINT`, `SYSTEM CHECK`,
+`WHY THIS MATTERS`, `IMPLEMENTATION REPORT`.
 
 Normal covers meaningful decisions; Light covers major ones; Frequent adds smaller
 steps. Never trigger by time or tool counts. Respect explicit requests for help,

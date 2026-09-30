@@ -87,7 +87,7 @@ Launch with `claude --plugin-dir /absolute/path/to/vibe-wise`.
    the table directly, not in a code fence. Questions may be detailed; don't force
    a short length or fixed width. Keep diagrams outside the card. Other callouts
    retain the divider, bold title, and spacing. Every title keeps one leading `✦`
-   and its full label/icon. Use native pickers for choices, with no trailing
+   and its full label, without emojis. Use native pickers for choices, with no trailing
    paragraphs obscuring the point where the learner should respond.
 9. **Clarification without steering:** Ask about an unfamiliar concept mid-decision.
    Claude should clarify it, correct any misleading framing, and return to one
