@@ -6,7 +6,7 @@ The scenario uses paraphrased learner inputs and synthetic notes. It includes no
 private transcript, credentials, or generated application source.
 
 The original conversation loaded VibeWise 0.1.23 and had an existing starter.
-This demo loads the current checkout and starts clean, so the current card titles
+This demo loads the current checkout and starts clean, so the current checkpoint titles
 and wording apply. Expect the same learning opportunities, not identical replies
 or checkpoint ordering. No changes to the plugin's teaching prompts are needed.
 
@@ -123,8 +123,9 @@ python3 -B -m unittest discover -s tests -v
 On 2026-09-30, all four live scenes completed without creating application files
 before approval. These runs preceded the separate Implementation checkpoint label.
 Fresh onboarding asked only the project-situation question. The
-staged reasoning scenes emitted the current Build checkpoint table with padding
-rows, and the data-model scene waited for the learner's links-table proposal.
+staged reasoning scenes emitted the then-current Build checkpoint cards (since
+replaced by plain headings), and the data-model scene waited for the learner's
+links-table proposal.
 
 Human review found differences from the original: the folder scene repeated a
 clarification after the learner revised the deletion rule, and sign-in asked a
@@ -143,14 +144,11 @@ shows Build, Decision, and Implementation checkpoints together.
 
 **Claude:**
 
-```text
-╭────────────────────────────────────────────────────────────────────╮
-│ ✦ Build checkpoint: Password storage                               │
-├────────────────────────────────────────────────────────────────────┤
-│ What would you store so we can check someone's password when they  │
-│ sign in?                                                           │
-╰────────────────────────────────────────────────────────────────────╯
-```
+---
+
+**✦ Build checkpoint: Password storage**
+
+What would you store so we can check someone's password when they sign in?
 
 **You:**
 

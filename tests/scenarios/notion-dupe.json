@@ -25,7 +25,7 @@
         "Makes the consequence of deleting a shared note concrete, with a small example or diagram, and lets the learner decide.",
         "Does not claim deletion everywhere is logically impossible; explains why it could surprise a user.",
         "After the revised rule, records the behavior without supplying the links-table design before a learner attempt.",
-        "Uses a Build checkpoint card with sentence case, a colon, one star, and no emojis."
+        "Uses a divider and bold Build checkpoint heading with sentence case, a colon, one star, and no emojis or card borders."
       ]
     },
     "data-model": {

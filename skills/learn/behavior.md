@@ -79,18 +79,11 @@ Keep context to 1–3 sentences unless more explanation is needed. Diagrams shou
 clarify the learner's model or verified code; leave unknown relationships as `?`.
 Don't repeat a recap, diagram, and lesson after every reply.
 
-Build Checkpoints use a one-column Markdown table as a card, rendered directly
-without a code fence. Put the named heading in the header, any needed context in
-a body row, and the bold question in its own row:
-
-| ✦ Build checkpoint: <description> |
-| :--- |
-| <Context, when needed> |
-| **<Reasoning question>** |
-
-The question can be as detailed as needed; don't shorten it to fit a fixed width
-or word count. Keep diagrams outside the table so they stay readable.
-Other callouts use a divider, bold heading, and spacing. Use native AskUserQuestion
+All checkpoints and other callouts use a divider, a bold named heading, and blank
+lines around the content. Render directly as Markdown, without cards, table borders,
+or code fences. Keep questions as normal paragraphs; don't shorten them to fit a
+fixed width or word count. Reserve tables for comparisons and proposed additions.
+Use native AskUserQuestion
 for choices (text fallback if unavailable). Reports need no question.
 Headings use `✦ <Type>: <description>` with exact labels:
 `Build checkpoint`, `Decision checkpoint`, `Implementation checkpoint`, `System check`,

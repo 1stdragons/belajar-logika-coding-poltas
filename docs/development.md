@@ -90,11 +90,10 @@ projects and keeps generated conversations outside the repository.
 8. **Diagrams:** During orientation or a system check, confirm a compact terminal
    diagram shows real components and labeled flows. Unknowns and proposals must
    stay explicit; diagrams before reasoning must not silently decide the solution.
-   Build Checkpoints use a one-column Markdown table: the named title is the header,
-   context is an optional body row, and the bold question has its own row. Render
-   the table directly, not in a code fence. Questions may be detailed; don't force
-   a short length or fixed width. Keep diagrams outside the card. Other callouts
-   retain the divider, bold title, and spacing. Every title keeps one leading `✦`
+   All checkpoints use a divider, bold title, and blank lines around normal prose,
+   rendered directly without cards, tables, or code fences. Questions may be detailed;
+   don't force a short length or fixed width. Tables remain useful for comparisons
+   and proposed additions. Every title keeps one leading `✦`
    and its full label in sentence case, followed by a colon, without emojis
    (for example, `✦ Build checkpoint: <description>`). Use native pickers for choices, with no trailing
    paragraphs obscuring the point where the learner should respond.

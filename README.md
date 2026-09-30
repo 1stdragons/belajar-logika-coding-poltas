@@ -38,17 +38,13 @@ A note can be in several folders. Deleting a folder should delete its notes.
 
 **Claude:**
 
-```text
-╭────────────────────────────────────────────────────────────────────╮
-│ ✦ Build checkpoint: Deleting a shared note                         │
-├────────────────────────────────────────────────────────────────────┤
-│ "Trip ideas" is in both Travel and Summer. Deleting it removes it  │
-│ from both.                                                         │
-├────────────────────────────────────────────────────────────────────┤
-│ When someone deletes Travel, what should happen to that note in    │
-│ Summer?                                                            │
-╰────────────────────────────────────────────────────────────────────╯
-```
+---
+
+**✦ Build checkpoint: Deleting a shared note**
+
+"Trip ideas" is in both Travel and Summer. Deleting it removes it from both.
+
+When someone deletes Travel, what should happen to that note in Summer?
 
 **You:**
 
@@ -60,14 +56,11 @@ Keep it in Summer. If it has no folders left, keep the note outside any folder.
 
 That separates deleting a folder from deleting a note.
 
-```text
-╭────────────────────────────────────────────────────────────────────╮
-│ ✦ Build checkpoint: Connecting notes and folders                   │
-├────────────────────────────────────────────────────────────────────┤
-│ How would you represent which folders a note belongs to, without   │
-│ copying the note?                                                  │
-╰────────────────────────────────────────────────────────────────────╯
-```
+---
+
+**✦ Build checkpoint: Connecting notes and folders**
+
+How would you represent which folders a note belongs to, without copying the note?
 
 **You:**
 
