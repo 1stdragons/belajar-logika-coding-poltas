@@ -30,89 +30,101 @@ Setup asks one question at a time. Use the arrow keys and Enter for choices; pic
 A condensed example adapted from a real notes-app learning session. Later
 implementation steps are illustrative; intervening design discussions are omitted.
 
+**You:**
+
+> A note can be in several folders. Deleting a folder should delete its notes.
+
+**Claude:**
+
+| ✦ Build checkpoint: Deleting a shared note |
+| :--- |
+| |
+| "Trip ideas" is in both Travel and Summer. Deleting it removes it from both. |
+| **When someone deletes Travel, what should happen to that note in Summer?** |
+| |
+
+**You:**
+
+> Keep it in Summer. If it has no folders left, keep the note outside any folder.
+
+**Claude:**
+
+That separates deleting a folder from deleting a note.
+
+| ✦ Build checkpoint: Connecting notes and folders |
+| :--- |
+| |
+| **How would you represent which folders a note belongs to, without copying the note?** |
+| |
+
+**You:**
+
+> A links table with note_id and folder_id. Deleting a folder removes its links,
+> not the notes.
+
+**Claude:**
+
+Each link records one membership. Several links can point to the same note;
+a note with no links is unfiled.
+
+`notes ← folder links → folders`
+
+---
+
+**✦ Decision checkpoint: Folder membership**
+
+Proposed: store notes once and track folder membership in a links table.
+Deleting a folder removes its links and keeps the notes. This supports multiple
+folders per note; loading a folder's notes needs a lookup through those links.
+
+Confirming records this design. We still need to work through access rules
+and technology choices before writing code.
+
 ```text
-You:
-  A note can be in several folders. Deleting a folder should delete its notes.
-
-Claude:
-  | ✦ Build checkpoint: Deleting a shared note |
-  | :--- |
-  | |
-  | "Trip ideas" is in both Travel and Summer. Deleting it removes it from both. |
-  | **When someone deletes Travel, what should happen to that note in Summer?** |
-  | |
-
-You:
-  Keep it in Summer. If it has no folders left, keep the note outside any folder.
-
-Claude:
-  That separates deleting a folder from deleting a note.
-
-  | ✦ Build checkpoint: Connecting notes and folders |
-  | :--- |
-  | |
-  | **How would you represent which folders a note belongs to, without copying the note?** |
-  | |
-
-You:
-  A links table with note_id and folder_id. Deleting a folder removes its links,
-  not the notes.
-
-Claude:
-  Each link records one membership. Several links can point to the same note;
-  a note with no links is unfiled.
-
-  notes ← folder links → folders
-
-  ────────────────────────────────────────────────────────────
-
-  ✦ Decision checkpoint: Folder membership
-
-  Proposed: store notes once and track folder membership in a links table.
-  Deleting a folder removes its links and keeps the notes. This supports multiple
-  folders per note; loading a folder's notes needs a lookup through those links.
-
-  Confirming records this design. We still need to work through access rules
-  and technology choices before writing code.
-
-  ❯ 1. Confirm and continue
-       This approach makes sense to me; move to the next piece.
-    2. Discuss
-       Ask questions or clarify anything that doesn't make sense before deciding.
-
-You:
-  Confirm and continue.
-
-[Later, after the remaining choices for this step are worked through...]
-
-Claude:
-  ────────────────────────────────────────────────────────────
-
-  ✦ Implementation checkpoint: Folder membership
-
-  I'll add the agreed tables and folder-deletion operation, then test that deleting
-  a folder preserves its notes and their membership in other folders.
-  This step builds storage behavior; the UI comes later.
-
-  ❯ 1. Implement this step
-       This approach makes sense to me; write the code for this step.
-    2. Discuss
-       Ask questions or clarify anything that doesn't make sense before deciding.
-
-You:
-  Implement this step.
-
-[Claude writes the code and runs the tests.]
-
-Claude:
-  ────────────────────────────────────────────────────────────
-
-  ✦ Implementation report: Folder membership
-
-  - Added the schema migration: each membership references one note and one folder.
-  - Added folder deletion: removes the folder and its links, preserving note content.
-  - Added and ran tests for shared notes and notes left without a folder; both passed.
+❯ 1. Confirm and continue
+     This approach makes sense to me; move to the next piece.
+  2. Discuss
+     Ask questions or clarify anything that doesn't make sense before deciding.
 ```
+
+**You:**
+
+> Confirm and continue.
+
+*Later, after the remaining choices for this step are worked through...*
+
+**Claude:**
+
+---
+
+**✦ Implementation checkpoint: Folder membership**
+
+I'll add the agreed tables and folder-deletion operation, then test that deleting
+a folder preserves its notes and their membership in other folders.
+This step builds storage behavior; the UI comes later.
+
+```text
+❯ 1. Implement this step
+     This approach makes sense to me; write the code for this step.
+  2. Discuss
+     Ask questions or clarify anything that doesn't make sense before deciding.
+```
+
+**You:**
+
+> Implement this step.
+
+*Claude writes the code and runs the tests.*
+
+**Claude:**
+
+---
+
+**✦ Implementation report: Folder membership**
+
+- Added the schema migration: each membership references one note and one folder.
+- Added folder deletion: removes the folder and its links, preserving note content.
+- Added and ran tests for shared notes and notes left without a folder; both passed.
 
 You don't need to know the answer already. Claude can explain unfamiliar concepts, sketch the relevant pieces, and help you tackle a smaller question. You stay involved in forming the plan. Answer in plain English; ask for more help or say “skip” whenever you want.
 

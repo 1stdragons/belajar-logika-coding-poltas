@@ -141,47 +141,52 @@ matters. It illustrates the interaction, not an exact transcript or a required
 password-storage design. The folder example in the [README](../../README.md#what-it-feels-like)
 shows Build, Decision, and Implementation checkpoints together.
 
+**Claude:**
+
+| ✦ Build checkpoint: Password storage |
+| :--- |
+| |
+| **What would you store so we can check someone's password when they sign in?** |
+| |
+
+**You:**
+
+> A hashed password, not the password itself.
+
+**Claude:**
+
+A hash lets us verify a password without storing the original. Password storage
+also needs a method designed to make repeated guesses expensive, and a unique
+salt so equal passwords don't produce equal stored hashes.
+
+**✦ Decision checkpoint: Password storage**
+
+Your proposal: store a password hash. Details to discuss before confirming:
+
+| Detail | Proposal | Why it matters |
+| --- | --- | --- |
+| Hashing method | Use a password-hashing library with scrypt | Makes each guess expensive |
+| Salt | Let the library generate a fresh random salt per password | Prevents reuse of precomputed guesses across users |
+
 ```text
-Claude:
-  | ✦ Build checkpoint: Password storage |
-  | :--- |
-  | |
-  | **What would you store so we can check someone's password when they sign in?** |
-  | |
-
-You:
-  A hashed password, not the password itself.
-
-Claude:
-  A hash lets us verify a password without storing the original. Password storage
-  also needs a method designed to make repeated guesses expensive, and a unique
-  salt so equal passwords don't produce equal stored hashes.
-
-  ✦ Decision checkpoint: Password storage
-
-  Your proposal: store a password hash. Details to discuss before confirming:
-
-  | Detail | Proposal | Why it matters |
-  | --- | --- | --- |
-  | Hashing method | Use a password-hashing library with scrypt | Makes each guess expensive |
-  | Salt | Let the library generate a fresh random salt per password | Prevents reuse of precomputed guesses across users |
-
-  ❯ 1. Confirm and continue
-       This approach makes sense to me; move to the next piece.
-    2. Discuss
-       Ask questions or clarify anything that doesn't make sense before deciding.
-
-You:
-  Discuss. What is a salt?
-
-Claude:
-  Extra random data mixed into the password before hashing. Two people with the
-  same password get different hashes because their salts differ. We store the salt
-  alongside the hash so we can repeat the check at sign-in; it doesn't need to be secret.
-
-  The hashing method and salt handling are still proposals. We haven't confirmed
-  them or started implementing.
+❯ 1. Confirm and continue
+     This approach makes sense to me; move to the next piece.
+  2. Discuss
+     Ask questions or clarify anything that doesn't make sense before deciding.
 ```
+
+**You:**
+
+> Discuss. What is a salt?
+
+**Claude:**
+
+Extra random data mixed into the password before hashing. Two people with the
+same password get different hashes because their salts differ. We store the salt
+alongside the hash so we can repeat the check at sign-in; it doesn't need to be secret.
+
+The hashing method and salt handling are still proposals. We haven't confirmed
+them or started implementing.
 
 An Implementation checkpoint comes when a specific coding step is ready. It can
 confirm the design and authorize that step together; don't add a separate Decision
