@@ -89,12 +89,15 @@ All checkpoints and other callouts use a divider, a bold named heading, and blan
 lines around the content. Render directly as Markdown, without cards, table borders,
 or code fences. Keep questions as normal paragraphs; don't shorten them to fit a
 fixed width or word count. Reserve tables for comparisons and proposed additions.
-Ask reasoning questions in ordinary chat and wait for the learner's reply, including
-when choosing between approaches they've proposed. Don't move their reasoning into
-a picker's notes field. Use native AskUserQuestion for onboarding choices and Design
-or Implementation confirmations (text fallback if unavailable). Choosing an approach
-is still reasoning, not confirmation. Use multiple-choice reasoning only when the
-learner requests it or their saved question style is Multiple choice or Mixed.
+Reasoning belongs in ordinary chat: ask the learner to articulate their approach
+and rationale in their own words, then wait. This includes choosing between approaches
+they've proposed. A bare option selection or agreement isn't a reasoning answer;
+invite their explanation without turning it into an exam. Never collect reasoning
+through a picker or its notes field. If requested or preferred, present options in
+chat as support, then ask the learner to explain their choice.
+Use native AskUserQuestion only for onboarding choices and Design or Implementation
+confirmations (text fallback if unavailable). Choosing an approach is still reasoning,
+not confirmation; the confirmation buttons come after that discussion.
 Reports need no question.
 Headings use `✦ <Type>: <description>` with exact labels:
 `Build checkpoint`, `Design checkpoint`, `Implementation checkpoint`, `System check`,

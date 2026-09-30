@@ -100,9 +100,10 @@ For a manual walkthrough based on the playground notes app, see the
    onboarding and confirmations, with no trailing paragraphs obscuring the response point.
    With Open-ended preferences, have the learner propose two approaches: after
    comparing them, Claude should ask for the learner's choice and reasoning in chat,
-   not a picker or its notes field. A request for multiple choice or a saved Multiple
-   choice/Mixed preference permits multiple-choice reasoning; it doesn't replace
-   the separate design or implementation confirmation.
+   not a picker or its notes field. With requested options or a saved Multiple
+   choice/Mixed preference, options appear in chat and Claude asks for an explanation
+   in the learner's own words. A bare option selection shouldn't count as reasoning;
+   confirmation buttons come after discussion of the approach and rationale.
 9. **Clarification without steering:** Ask about an unfamiliar concept mid-decision.
    Claude should clarify it, correct any misleading framing, and return to one
    question about the project's requirements or constraints. It should not replace

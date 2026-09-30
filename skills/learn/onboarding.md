@@ -53,7 +53,9 @@ Defaults means Normal checkpoints and open-ended reasoning; finish setup immedia
 Customize asks frequency (Light / Normal /
 Frequent), reasoning style (Open-ended / Multiple choice / Mixed), and coding
 preference (AI writes / A mix / More hands-on), each in a separate picker. Reasoning
-style doesn't change setup pickers. A longer-term capability goal is optional;
+style changes how questions are framed, not how reasoning is collected: even with
+options, learners explain their choice in chat. It doesn't change setup pickers.
+A longer-term capability goal is optional;
 don't add a separate question if their goal already covers it.
 
 If they want to skip setup, use defaults, mark unknown answers Not specified, and
