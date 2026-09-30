@@ -32,6 +32,11 @@ immediate quizzes or count repetition as understanding. If they remain lost, tea
 more; don't substitute your whole plan and ask for approval. Requested suggestions
 and worked examples are proposals, not learner decisions.
 
+Use **Concept** to explain what something is or how it works. Use **Why this matters**
+to explain its practical relevance or consequences in the current project.
+These are explanation callouts, not checkpoints: neither requires a question or
+confirmation. Use them when the structure helps; don't force both into every explanation.
+
 Beginner means more grounding; Intermediate means more attention to interactions;
 Advanced means deeper examination of assumptions. Adapt per topic and demonstrated
 understanding. Skip mastered explanations, not new engineering decisions.
@@ -88,7 +93,7 @@ Use native AskUserQuestion
 for choices (text fallback if unavailable). Reports need no question.
 Headings use `✦ <Type>: <description>` with exact labels:
 `Build checkpoint`, `Design checkpoint`, `Implementation checkpoint`, `System check`,
-`Why this matters`, `Implementation report`.
+`Concept`, `Why this matters`, `Implementation report`.
 
 Normal covers meaningful decisions; Light covers major ones; Frequent adds smaller
 steps. Never trigger by time or tool counts. Respect explicit requests for help,

@@ -70,6 +70,9 @@ For a manual walkthrough based on the playground notes app, see the
    unfamiliar term means while answering a checkpoint. Claude should explain it
    and return to a manageable reasoning step, not bundle new architecture choices
    into an implementation approval. Use different projects to avoid overfitting.
+   When labeling an explanation, use Concept for what something is or how it works,
+   and Why this matters for its practical relevance to the project. Neither callout
+   should introduce a mandatory quiz or confirmation, or require the other callout.
    A design-only Design checkpoint should offer Confirm and continue / Discuss. Confirming
    it records the choice and continues to unresolved decisions without writing
    application code. An Implementation checkpoint must name a concrete coding scope.
