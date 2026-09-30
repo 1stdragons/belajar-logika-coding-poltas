@@ -32,7 +32,7 @@ You:
   Build a reading list I can share with friends, but only I can edit.
 
 Claude:
-  | ✦ BUILD CHECKPOINT - Who can change a shared list |
+  | ✦ Build checkpoint: Who can change a shared list |
   | :--- |
   | Friends need to read the list without being able to change it. |
   | **How would you make sure only the owner can edit?** |
@@ -48,7 +48,7 @@ Claude:
 
   ────────────────────────────────────────────────────────────
 
-  ✦ DECISION CHECKPOINT - Who can change a shared list
+  ✦ Decision checkpoint: Who can change a shared list
 
   Proposed: check ownership on the server before allowing a change. This keeps
   friends' viewing access separate from editing. Edits must pass through the server.
