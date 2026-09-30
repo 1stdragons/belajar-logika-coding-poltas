@@ -92,8 +92,7 @@ projects and keeps generated conversations outside the repository.
    stay explicit; diagrams before reasoning must not silently decide the solution.
    Build Checkpoints use a one-column Markdown table: the named title is the header,
    context is an optional body row, and the bold question has its own row. Render
-   the table directly, not in a code fence, with empty table rows above and below
-   the content for spacing. Questions may be detailed; don't force
+   the table directly, not in a code fence. Questions may be detailed; don't force
    a short length or fixed width. Keep diagrams outside the card. Other callouts
    retain the divider, bold title, and spacing. Every title keeps one leading `✦`
    and its full label in sentence case, followed by a colon, without emojis

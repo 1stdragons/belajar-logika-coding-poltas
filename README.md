@@ -36,9 +36,17 @@ implementation steps are illustrative; intervening design discussions are omitte
 
 **Claude:**
 
-| ✦ Build checkpoint: Deleting a shared note |
-| :--- |
-| <br>"Trip ideas" is in both Travel and Summer. Deleting it removes it from both.<br><br>**When someone deletes Travel, what should happen to that note in Summer?**<br><br> |
+```text
+╭────────────────────────────────────────────────────────────────────╮
+│ ✦ Build checkpoint: Deleting a shared note                         │
+├────────────────────────────────────────────────────────────────────┤
+│ "Trip ideas" is in both Travel and Summer. Deleting it removes it  │
+│ from both.                                                         │
+├────────────────────────────────────────────────────────────────────┤
+│ When someone deletes Travel, what should happen to that note in    │
+│ Summer?                                                            │
+╰────────────────────────────────────────────────────────────────────╯
+```
 
 **You:**
 
@@ -48,9 +56,14 @@ implementation steps are illustrative; intervening design discussions are omitte
 
 That separates deleting a folder from deleting a note.
 
-| ✦ Build checkpoint: Connecting notes and folders |
-| :--- |
-| <br>**How would you represent which folders a note belongs to, without copying the note?**<br><br> |
+```text
+╭────────────────────────────────────────────────────────────────────╮
+│ ✦ Build checkpoint: Connecting notes and folders                   │
+├────────────────────────────────────────────────────────────────────┤
+│ How would you represent which folders a note belongs to, without   │
+│ copying the note?                                                  │
+╰────────────────────────────────────────────────────────────────────╯
+```
 
 **You:**
 

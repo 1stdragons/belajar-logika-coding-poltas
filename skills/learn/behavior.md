@@ -85,13 +85,9 @@ a body row, and the bold question in its own row:
 
 | ✦ Build checkpoint: <description> |
 | :--- |
-| |
 | <Context, when needed> |
 | **<Reasoning question>** |
-| |
 
-Use empty table rows above and below the content for spacing, not blank lines
-that would break the table.
 The question can be as detailed as needed; don't shorten it to fit a fixed width
 or word count. Keep diagrams outside the table so they stay readable.
 Other callouts use a divider, bold heading, and spacing. Use native AskUserQuestion
