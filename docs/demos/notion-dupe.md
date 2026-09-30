@@ -154,7 +154,9 @@ shows Build, Decision, and Implementation checkpoints together.
 
 **You:**
 
-> A hashed password, not the password itself.
+```text
+A hashed password, not the password itself.
+```
 
 **Claude:**
 
@@ -180,7 +182,9 @@ Your proposal: store a password hash. Details to discuss before confirming:
 
 **You:**
 
-> Discuss. What is a salt?
+```text
+Discuss. What is a salt?
+```
 
 **Claude:**
 

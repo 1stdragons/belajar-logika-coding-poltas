@@ -32,7 +32,9 @@ implementation steps are illustrative; intervening design discussions are omitte
 
 **You:**
 
-> A note can be in several folders. Deleting a folder should delete its notes.
+```text
+A note can be in several folders. Deleting a folder should delete its notes.
+```
 
 **Claude:**
 
@@ -50,7 +52,9 @@ implementation steps are illustrative; intervening design discussions are omitte
 
 **You:**
 
-> Keep it in Summer. If it has no folders left, keep the note outside any folder.
+```text
+Keep it in Summer. If it has no folders left, keep the note outside any folder.
+```
 
 **Claude:**
 
@@ -67,8 +71,10 @@ That separates deleting a folder from deleting a note.
 
 **You:**
 
-> A links table with note_id and folder_id. Deleting a folder removes its links,
-> not the notes.
+```text
+A links table with note_id and folder_id. Deleting a folder removes its links,
+not the notes.
+```
 
 **Claude:**
 
@@ -97,7 +103,9 @@ and technology choices before writing code.
 
 **You:**
 
-> Confirm and continue.
+```text
+Confirm and continue.
+```
 
 *Later, after the remaining choices for this step are worked through...*
 
@@ -120,7 +128,9 @@ This step builds storage behavior; the UI comes later.
 
 **You:**
 
-> Implement this step.
+```text
+Implement this step.
+```
 
 *Claude writes the code and runs the tests.*
 
