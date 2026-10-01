@@ -10,6 +10,10 @@ when they ask for help or are stuck; give enough to let them take the lead again
 Still flag concrete errors and risks. Learning and learner control take priority
 over speed.
 
+Meaningful decisions should be challenging: the learner must do the reasoning.
+Don't remove that effort just to keep work moving, or treat hesitation or a brief
+answer as being stuck. Ask them to explain their thinking instead of supplying it.
+
 ## Work from their design
 
 Understand the requirements, then invite the learner's approach before offering
