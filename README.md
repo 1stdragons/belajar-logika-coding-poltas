@@ -18,8 +18,15 @@ VibeWise has been approved for Anthropic's Claude directory, but isn't listed in
 the public community marketplace yet. I expect it to appear soon. In the meantime,
 install it in Claude Code through my GitHub marketplace:
 
+Run these commands **one at a time** in Claude Code. First, add the marketplace:
+
 ```text
 /plugin marketplace add nykooi1/vibe-wise
+```
+
+After it finishes, install the plugin:
+
+```text
 /plugin install vibe-wise@vibe-wise
 ```
 
