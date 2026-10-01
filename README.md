@@ -14,8 +14,9 @@ You need [Claude Code](https://code.claude.com/docs/en/setup) and
 [Python 3](https://www.python.org/downloads/). VibeWise uses Python to restore
 learning context and reset learning notes. No extra Python packages are needed.
 
-VibeWise has been approved for Anthropic's Claude directory. You can install it
-in Claude Code now through this repository's marketplace:
+VibeWise has been approved for Anthropic's Claude directory, but isn't listed in
+the public community marketplace yet. We expect it to appear soon. In the meantime,
+install it in Claude Code through our GitHub marketplace:
 
 ```text
 /plugin marketplace add nykooi1/vibe-wise
