@@ -1,4 +1,6 @@
-<h1><img src=".claude-plugin/icon.svg" alt="" width="40" height="40" align="middle"> VibeWise</h1>
+<img src=".claude-plugin/icon.svg" alt="VibeWise brain with code brackets" width="96" height="96">
+
+# VibeWise
 
 **You build. AI writes.**
 
