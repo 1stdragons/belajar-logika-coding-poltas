@@ -1,3 +1,5 @@
+<img src=".claude-plugin/icon.svg" alt="VibeWise brain with code brackets" width="96" height="96">
+
 # VibeWise
 
 **You build. AI writes.**
