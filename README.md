@@ -15,8 +15,8 @@ You need [Claude Code](https://code.claude.com/docs/en/setup) and
 learning context and reset learning notes. No extra Python packages are needed.
 
 VibeWise has been approved for Anthropic's Claude directory, but isn't listed in
-the public community marketplace yet. We expect it to appear soon. In the meantime,
-install it in Claude Code through our GitHub marketplace:
+the public community marketplace yet. I expect it to appear soon. In the meantime,
+install it in Claude Code through my GitHub marketplace:
 
 ```text
 /plugin marketplace add nykooi1/vibe-wise
