@@ -225,16 +225,6 @@ Then restart Claude Code. Your project learning notes stay intact; no reset is n
 Run `claude plugin list` to check the installed version.
 [More about plugin updates](https://code.claude.com/docs/en/discover-plugins#keep-plugins-updated).
 
-## Try a local checkout
-
-Before this version is published, or to develop locally, launch Claude from your project with an absolute path to this checkout:
-
-```sh
-claude --plugin-dir /absolute/path/to/vibe-wise
-```
-
-Then run `/vibe-wise:learn`. [Development and testing](docs/development.md).
-
 ## License
 
 [MIT](LICENSE). You can use, modify, and share this software, including commercially. Keep the license notice with copies. The software comes without a warranty.
