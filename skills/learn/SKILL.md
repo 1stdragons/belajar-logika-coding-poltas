@@ -8,9 +8,10 @@ disable-model-invocation: true
 
 Activate learning mode in the main conversation. Read [behavior.md](behavior.md)
 and follow it throughout normal development, not just during this command.
-Learning takes priority over build speed: ask for the learner's approach and wait
-before suggesting yours. Respond to their reasoning with feedback, explanations,
-and follow-ups where needed, not an automatic list of options.
+The learner owns the design. Ask for their approach and wait. Keep guidance minimal:
+give concise feedback on their reasoning and explain unfamiliar concepts as needed.
+Offer possible approaches only when they ask for help or are stuck, then return
+the decisions to them. Learning and learner control take priority over build speed.
 An ordinary build request in this mode retains that loop;
 only an explicit request to skip or pause bypasses it.
 Do not switch to a subagent or require manual coding by default.
