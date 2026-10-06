@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo-poltas-kc.jpg" width="600" alt="Logo Komputasi Cerdas Keamanan Data D3 TI Poltas">
+    <img src="assets/logo-poltas-kc.jpg" width="600" alt="Logo Komputasi Cerdas Keamanan Data D3 TI Poltas">
 </p>
 
 # Belajar Logika Coding - Poltas
