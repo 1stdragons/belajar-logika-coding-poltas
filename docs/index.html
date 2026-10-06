@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Belajar Logika Coding POLTAS - Kamu yang Mikir, AI yang Nulis</title>
+<style>
+:root{--bg:#0e0a1e;--gold:#FFD778;--cyan:#6EDCFF;--white:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto;background:var(--bg);color:var(--white);line-height:1.6}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;background:radial-gradient(circle at 50% 0%, #2a1f4d, #0e0a1e 60%)}
+.badge{border:1px solid var(--gold);color:var(--gold);padding:6px 14px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:20px}
+h1{font-size:clamp(28px,5vw,54px);color:var(--gold);margin:10px 0 0;line-height:1.1}
+h2{color:var(--cyan);font-weight:400;font-size:clamp(16px,2.5vw,22px);margin:15px 0 30px}
+.card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,215,120,0.3);border-radius:16px;padding:24px;max-width:800px;width:100%;margin:20px auto;text-align:left;backdrop-filter:blur(10px)}
+.code-box{background:#1a1235;border:1px solid #3a2e6a;border-radius:10px;padding:16px;position:relative;margin:12px 0;overflow:auto}
+.code-box code{color:#ffd778;font-family:monospace;font-size:14px;white-space:pre-wrap;word-break:break-all}
+.btn{cursor:pointer;border:none;border-radius:8px;padding:10px 18px;font-weight:700;display:inline-flex;align-items:center;gap:6px}
+.btn-gold{background:var(--gold);color:#1a1235}
+.btn-copy{position:absolute;right:10px;top:10px;background:var(--gold);color:#000;padding:6px 10px;font-size:12px}
+.step{display:flex;gap:16px;margin:18px 0}
+.num{background:var(--gold);color:#000;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-weight:800;flex-shrink:0}
+a{color:var(--cyan);text-decoration:none}
+.footer{padding:40px;text-align:center;color:#888;font-size:13px}
+</style>
+</head>
+<body>
+<div class="hero">
+<div class="badge">D3 TI POLTAS • POLITEKNIK ACEH SELATAN</div>
+<h1>BELAJAR LOGIKA<br>CODING POLTAS</h1>
+<h2>Kamu yang Mikir, AI yang Nulis</h2>
+<p style="max-width:600px;color:#ccc">Website resmi tutorial Komputasi Cerdas. Fokus ke logika, checkpoint, dan cara pakai Claude Code dengan benar. Bukan asal copy-paste.</p>
+<a href="#mulai" class="btn btn-gold">🚀 Mulai Belajar Sekarang</a>
+</div>
 
+<div style="max-width:900px;margin:0 auto;padding:20px" id="mulai">
+
+<div class="card">
+<h3 style="color:var(--gold);margin-top:0">Langkah 1: Install Plugin Claude Code di VS Code</h3>
+<div class="step"><div class="num">1</div><div>Buka VS Code > Extensions (Ctrl+Shift+X) > Cari <b>Claude Code</b> by Anthropic > Install</div></div>
+<div class="step"><div class="num">2</div><div>Atau install via command line, klik Copy:</div></div>
+<div class="code-box">
+<code id="c1">code --install-extension Anthropic.claude-code</code>
+<button class="btn btn-copy" onclick="copy('c1')">Copy</button>
+</div>
+</div>
+
+<div class="card">
+<h3 style="color:var(--gold);margin-top:0">Langkah 2: 3 Checkpoint Wajib (Biar Gak Asal Copy)</h3>
+<div class="step"><div class="num">1</div><div><b>Checkpoint Logika:</b> Jelaskan dulu alurnya pakai bahasa sendiri sebelum minta AI nulis. Misal: "Saya mau bikin if umur > 18 maka...".</div></div>
+<div class="step"><div class="num">2</div><div><b>Checkpoint Baca:</b> Setelah AI nulis, baca baris per baris. Tanya: variabel ini buat apa? Kenapa pakai loop ini?</div></div>
+<div class="step"><div class="num">3</div><div><b>Checkpoint Uji:</b> Ganti 1 angka, jalankan. Kalau error, tanya AI kenapa error, jangan langsung minta benerin.</div></div>
+</div>
+
+<div class="card">
+<h3 style="color:var(--gold);margin-top:0">Langkah 3: Prompt Template Mahasiswa Poltas</h3>
+<p style="color:#aaa;font-size:14px">Pakai template ini kalau minta bantuan AI, biar belajar logikanya:</p>
+<div class="code-box">
+<code id="c2">Saya mahasiswa D3 TI Poltas. Saya sedang belajar logika [sebutkan topik: percabangan/looping/array].
+
+Tolong JANGAN langsung kasih kode jadi.
+Bantu saya dengan:
+1. Jelaskan logikanya langkah demi langkah
+2. Kasih pseudocode-nya saja
+3. Baru kasih contoh kode sederhana + penjelasan per baris
+
+Topik saya: [tulis topik kamu di sini]</code>
+<button class="btn btn-copy" onclick="copy('c2')">Copy</button>
+</div>
+</div>
+
+<div class="card" style="text-align:center">
+<h3 style="color:var(--gold)">Akses Cepat</h3>
+<p>Short Link Resmi: <b style="color:var(--gold);font-size:18px">s.id/poltas-kc</b></p>
+<p>Repo: <a href="https://github.com/1stdragons/belajar-logika-coding-poltas" target="_blank">github.com/1stdragons/belajar-logika-coding-poltas</a></p>
+<p style="color:#888">Website ini live di: 1stdragons.github.io/belajar-logika-coding-poltas/</p>
+</div>
+
+</div>
+
+<div class="footer">© 2026 D3 TI Politeknik Aceh Selatan • Dibuat untuk pembelajaran</div>
+
+<script>
+function copy(id){
+ const t=document.getElementById(id).innerText;
+ navigator.clipboard.writeText(t).then(()=>{alert('Copied! ✅ Tempal di VS Code kamu')})
+}
+</script>
+</body>
+</html>
